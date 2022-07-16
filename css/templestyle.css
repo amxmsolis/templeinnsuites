@@ -64,6 +64,16 @@ header {
     text-align: left;
 }
 
+#upperDial{
+    display: block;
+    position: absolute;
+    top: .3em;
+    right: 3em;
+}
+#upperDial img{
+    width: 1em;
+}
+
 footer {
     background-color: #207178;
     color: #ffffff;
@@ -181,6 +191,8 @@ li.socialIconList{
         grid-area: 1 / 2 / 3 / 3;
         text-align: center; 
     }
-
+    #upperDial{
+        display: none;
+    }
 
 }
