@@ -82,8 +82,7 @@ footer {
 
 .lowerMenu { 
     display: grid;
-    width: 100%;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 70% auto;
 }
 #lowerPrivacy{
     width: 100%;
@@ -170,9 +169,13 @@ li.socialIconList{
     display: none;
 }
 
+.likeNo{
+    content: " &#128151; ";
+}
 
 /*Other sizes*/
 @media (max-width: 32.5em) {
+ 
 
 }
 
@@ -186,6 +189,9 @@ li.socialIconList{
     }
     .describeSocial{
         display: inline;
+    }
+    .lowerMenu { 
+        grid-template-columns: auto 60% auto;
     }
     #lowerAddress{
         grid-area: 1 / 2 / 3 / 3;

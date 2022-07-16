@@ -6,30 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/templestyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
     <title>Temple Inn & Suites - Terms and Policies</title>
-    <meta name="description"
-        content="Terms and policies, Privacy notice and ttributions from the Temple Inn & Suites website">
+    <meta name="description" content="Welcome to Temple Inn and Suites Mexico">
 </head>
 
-<body>
+<body onload="datesPageUpdate()">
     <header>
-        <img src="/images/templeinn-logo.png" class="upperLogo" alt="">
-        <nav class="upperMenu">
-            <button id="menuHamburger"><span>&#9776;</span><span>X</span></button>
-            <ul class="siteNavigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="locations.html">Locations</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="groups.html">Groups</a></li>
-                <li><a href="reservations.html">Reservations</a></li>
-                <li><a href="terms.html">Terms and Policies</a></li>
-            </ul>
+        <nav class="upperMenu" id="myupperMenu">
+            <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
+                    alt="Go home"></a>
+            <a href="locations.html" title="Take a look of the Temple locations in Mexico">Locations</a>
+            <a href="discover.html" title="Know more about our specilized services and ammenities">Discover</a>
+            <a href="groups.html" title="Are you planning an event or group visit?">Groups</a>
+            <a href="reservations.html" title="Reserve your visit">Reservations</a>
+            <a href="terms.html" title="Legal and privacy information">Terms and Policies</a>
+            <a href="javascript:void(0);" class="menuIcon" onclick="hammMenu()">
+                <img src="images/logo-menu.webp" alt="">
+            </a>
         </nav>
+        <div id="upperDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
+            class="describeSocial">+52 55 5999 9999</span></a></div>
+
+        
     </header>
+
+
     <main>
         <h1>Terms and Policies</h1>
         <ul class="infomationList">
@@ -115,25 +118,48 @@
 
         </section>
     </main>
+
+
+
     <footer>
-        <p><a href="terms.html#privacy" class="privacy">Privacy</a></p>
-        <p class="address">4800 Montgomery Ln #300, Bethesda, MD 20814</p>
-        <ul class="socialMedia">
-            <li><a href="tel:+525559999900" target="_blank"><img class="socialLogo" src="images/logo-phone.webp"
-                        alt=""><span class="describeSocial">
-                        +52 55 5999 9900</span></a></li>
-            <li><a href="https://www.facebook.com/ChurchofJesusChrist/" target="_blank"><img class="socialLogo"
-                        src="images/logo-facebook.webp" alt=""><span class="describeSocial">
-                        Facebook</span></a></li>
-            <li><a href="https://www.instagram.com/churchofjesuschrist/" target="_blank"><img class="socialLogo"
-                        src="images/logo-instagram.webp" alt=""><span class="describeSocial">
-                        Instagram</span></a></li>
-        </ul>
-        <img src="/images/templeinn-logo.png" class="footerLogo" alt="">
-        <p class="footerDate">Last Updated <span id="updateDate"></span></p>
+        <div class="lowerMenu">
+            <ul class="addressAndMail" id="lowerlogo">
+                <li><a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="lowerLogo"
+                            alt="Go home"></a></li>
+            </ul>
+            <ul class="addressAndMail" id="lowerPrivacy">
+                <li><a href="terms.html#privacy" title="Legal and privacy information"> Privacy</a>
+                </li>
+            </ul>
+            <ul class="addressAndMail" id="lowerAddress">
+                <li>&copy;<span id="currentYear"></span> Temple Inn & Suites</li>
+                <li>4800 Montgomery Ln #300</li>
+                <li>Bethesda, MD, US 2081</li>
+                <li><a href="mapas.html#hedquarters"><img src="images/logo-map.webp" class="socialIcon"
+                            alt="Find us in the map"><span class="describeSocial">Location map</span></a></li>
+                <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
+                            class="describeSocial">+52 55 5999 9999</span></a>
+                </li>
+            </ul>
+            <ul class="addressAndMail" id="lowerSocial">
+                <li>
+                    <a href="https://www.facebook.com/ChurchofJesusChrist/" target="_blank">
+                        <img src="images/logo-facebook.webp" class="socialIcon" alt="Follow us in Facebook">
+                        <span class="describeSocial">TempleInnMX</span></a></li>
+                <li><a href="https://www.instagram.com/churchofjesuschrist/" target="_blank"><img
+                            src="images/logo-instagram.webp" class="socialIcon" alt="Follow us in Instagram"><span
+                            class="describeSocial">TempleInnMX</span></a>
+                </li>
+            </ul>
+            <ul class="addressAndMail" id="lowerUpdatedate">
+                <li>
+                    <p class="footerDate">Last Updated <span id="updateDate"></span></p>
+                </li>
+            </ul>
+        </div>
+
     </footer>
-    <script src="js/valida.js">
+    <script src="js/templevalidation.js">
     </script>
-</body>
 
 </html>

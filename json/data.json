@@ -1,0 +1,39 @@
+{
+    "temples": [
+      {
+        "idComp": "1",
+        "templename": "Mexico City Temple",
+        "templeshortname":"mex",
+        "street": "Avenida 510 #90",
+        "neighborhood": "Col. San Juan de Aragon",
+        "city": "Gustavo A.  Madero, CDMX",
+        "cp": "07950",
+        "phone": "+525550033700",
+        "email": "cdmx@algo.com",
+        "history": "open",
+        "services": ["clothes rent","store", "food area", "Ordenances card print"],
+        "schedule": "",
+        "maplocationurl":"",
+        "cityweather":"",
+        "imageurl": "images/placeholder.png"
+      },
+      {
+        "idComp": "2",
+        "templename": "Veracruz Temple",
+        "templeshortname":"ver",
+        "street": "Avenida 510 #90",
+        "neighborhood": "Col. San Juan de Aragon",
+        "city": "Gustavo A.  Madero, CDMX",
+        "cp": "07950",
+        "phone": "+525550033700",
+        "email": "cdmx@algo.com",
+        "history": "open",
+        "services": ["clothes rent","store", "food area", "Ordenances card print"],
+        "schedule": "",
+        "maplocationurl":"",
+        "cityweather":"",
+        "imageurl": "images/placeholder.png"
+      }
+
+    ]
+  }
