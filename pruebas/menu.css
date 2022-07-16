@@ -1,0 +1,147 @@
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-color: #207178;
+    color: #ffffff;
+}
+
+.upperLogo {
+    width: 6rem; 
+}
+
+.upperMenu{
+    overflow: hidden;
+    background-color: #207178;
+    color: #ffffff;
+}
+
+.upperMenu a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: .5em .5em;
+    text-decoration: none;
+    border-radius: 25%;
+}
+
+.upperMenu a:hover:not(:first-child){
+    color:#000000;
+    text-shadow: .1em .01em #00A896;
+}
+
+.upperMenu a.activeOption {
+    background-color: #207178;
+}
+
+.menuIcon img {
+    width: 1.5em;
+    border: 1px solid #207178;
+}
+.upperMenu a:not(:first-child) {
+    display: none;
+}
+.upperMenu a.menuIcon {
+    float: right;
+    display: block;
+}
+
+.upperMenu.responsive {
+    position: relative;
+}
+
+.upperMenu.responsive .menuIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.upperMenu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+footer {
+    background-color: #207178;
+    color: #ffffff;
+    font-size: .9em;;
+}
+
+.lowerMenu { 
+     display: flex;
+     flex-direction: row;
+ }
+
+.lowerLogo {
+    width: 3rem;
+}
+
+
+
+.lowerMenu ul {
+    padding: .5em .5em;
+}
+
+.addressAndMail li {
+    list-style: none;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.lowerMenu a {
+    float: left;
+    display: block;
+    color: #ffffff; 
+    text-decoration: none;
+}
+
+.addressAndMail li{
+    text-decoration: none;
+}
+
+.lowerMenu a:hover:not(:first-child){
+    color:#000000;
+    text-shadow: .1em .01em #00A896;
+}
+.lowerMenu a:hover:not(:first-child){
+    color:#000000;
+    text-shadow: .1em .01em #00A896;
+}
+
+.lowerMenu a.activeOption {
+/*background-color: #207178;*/
+}
+
+.socialIcon{
+    width: 2em;
+    height: auto;
+    background-color: #ffffff;
+    border: 2px solid #00A896;
+    border-radius: 50%;
+    margin: .5em;
+}
+.describeSocial{
+    display: none;
+}
+
+
+/*Other sizes*/
+@media (max-width: 32.5em) {
+
+}
+
+@media (min-width: 51em) {
+    .upperMenu a.menuIcon {
+        float: right;
+        display: none;
+    }
+    .upperMenu a:not(:first-child,:last-child) {
+        display: block;
+    }
+    .describeSocial{
+        display: inline;
+    }
+}

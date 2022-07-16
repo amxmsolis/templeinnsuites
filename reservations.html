@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+    <title>Temple Inn & Suites - Reservations</title>
+    <meta name="description"
+        content="Fill in the form and reserve your accomation">
+</head>
+
+<body>
+    <header>
+        <img src="/images/templeinn-logo.png" class="upperLogo" alt="">
+        <nav class="upperMenu">
+            <button id="menuHamburger"><span>&#9776;</span><span>X</span></button>
+            <ul class="siteNavigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="groups.html">Groups</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="terms.html">Terms and Policies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Reservations</h1>
+        <form id="registrationForm" method="get" target="_self" action="thankyou.html">
+            <label for="fullName" class="fieldDescription">Full name *<span class="alertfullName"></span></label>
+            <input type="text" name="fullName" id="fullName" value="" placeholder="Full name" required>
+
+            <label for="lastName" class="fieldDescription">Last name *<span class="alertLastName"></span></label>
+            <input type="text" name="lastName" id="lastName" value="" placeholder="Last name" required>
+
+            <label for="title" class="fieldDescription">Title <span class="alertTitle"></span></label>
+            <input type="text" name="title" id="title" value="" placeholder="Title or schoolarship"  pattern="[A-Za-z\s-]{7,}">
+
+            <label for="email" class="fieldDescription">eMail * <span class="alertEmail"></span></label>
+            <input type="email" name="email" id="email" value=""  placeholder="email" required>
+
+            <label for="mobile" class="fieldDescription">Cell phone number *<span class="alertMobile"></span></label>
+            <input type="tel" name="mobile" id="mobile" value=""  placeholder="Phone number only numbers required" required>
+
+            <label for="jobPosition" class="fieldDescription">Job position *<span
+                    class="alertJobPosition"></span></label>
+            <input type="text" name="jobPosition" id="jobPosition" value=""  placeholder="Job position" required>
+
+            <p class="fieldDescription">Membership level:</p>
+            <div><input type="radio" id="NonProfit" name="memberShipLevel" value="Non Profit">
+                  <label for="NonProfit">Non Profit - no cost for non-profit organizations. </label> </div>
+            <div><input type="radio" id="Bronze" name="memberShipLevel" value="Bronze">
+                  <label for="Bronze">Bronze - $100usd/year includes access to all virtual events.</label> </div>
+            <div><input type="radio" id="Silver" name="memberShipLevel" value="Silver">
+                  <label for="Silver">Silver - $500usd/year includes 50% off for face-to-face courses + Bronze benefits</label> </div>
+            <div><input type="radio" id="Gold" name="memberShipLevel" value="Gold">
+                  <label for="Gold">Gold - $1000usd/year includes 1 free access to our Industrial Congress + Silver benefits </label> </div>
+
+
+            <label for="businessDescription" class="fieldDescription">Business description <span
+                    class="alertJobPosition"></span></label>
+            <textarea name="businessDescription" id="businessDescription"  placeholder="Please describe your business"></textarea>
+
+            <input type="hidden" id="dateTime" name="dateTime" value="">
+
+            <input type="submit" value="Join">
+
+        </form>
+    </main>
+    <footer>
+        <a href="terms.html#privacy" class="privacy">Privacy</a>
+        <p class="address">4800 Montgomery Ln #300, Bethesda, MD 20814</p>
+        <ul class="socialMedia">
+            <li><a href="tel:+525559999900" target="_blank"><img class="socialLogo" src="images/logo-phone.webp"
+                        alt=""><span class="describeSocial">
+                        +52 55 5999 9900</span></a></li>
+            <li><a href="https://www.facebook.com/ChurchofJesusChrist/" target="_blank"><img class="socialLogo"
+                        src="images/logo-facebook.webp" alt=""><span class="describeSocial">
+                        Facebook</span></a></li>
+            <li><a href="https://www.instagram.com/churchofjesuschrist/" target="_blank"><img class="socialLogo"
+                        src="images/logo-instagram.webp" alt=""><span class="describeSocial">
+                        Instagram</span></a></li>
+        </ul>
+        <img src="/images/templeinn-logo.png" class="footerLogo" alt="">
+        <p class="footerDate">Last Updated <span id="updateDate"></span></p>
+    </footer>
+    <script src="js/valida.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+/*
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-color: #207178;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: #207178;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-basis: max-content; 
+}
+footer div{
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+header a,
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.siteNavigation {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.siteNavigation li{
+    padding: 2em;
+}
+.socialMedia {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+*/
+
+/*MENU CONFIGURATION*/
+
+/*IMAGES CONFIGURATION*/
+.upperLogo {
+    width: 8em;
+}
+
+.footerLogo {
+    width: 4em;
+    position: relative;
+}
+
+.socialLogo {
+    background-color: #ffffff;
+    width: 1.5em;
+    border: .2em solid #ffffff;
+    border-radius: 50%;
+    margin: 1em;
+}
+
+/*
+.describeSocial{
+    display: none;
+}
+*/
+
+
+/*****/
+/****/
+* {
+    margin: 0em;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*Header definitions*/
+header {
+    background-color: #207178;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.contactInfoHdr {}
+
+
+img.logoHeader {
+    align-self: flex-start;
+    width: 100%;
+    max-width: 15em;
+    height: auto;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 1em;
+}
+
+
+.siteNavigation {
+    list-style: none;
+}
+
+.siteNavigation li:first-child {
+    display: block;
+}
+
+.siteNavigation li {
+    display: none;
+}
+
+.socialMedia {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
+.socialLogo {
+    width: 1em;
+    border: 3px solid #15434a;
+    border-radius: 25%;
+}
+
+.siteNavigation a,
+.socialMedia li {
+    font-style: italic;
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.socialMedia a {
+    color: #000000;
+}
+
+.siteNavigation a.menuHamburger::before {
+    content: " = ";
+    font-size: 2em;
+}
+
+.siteNavigation a:hover {
+    color: white;
+    background-color: #3d757d;
+}
+
+.changeMenuResp li {
+    display: block;
+}
+
+.changeMenuResp a.menuHamburger::before {
+    content: " X ";
+}
+
+/* Media Query for medium+ views */
+@media only screen and (min-width: 50em) {
+    .siteNavigation {
+        display: flex;
+    }
+
+    .siteNavigation li {
+        display: block;
+        /* change state in small view */
+        flex: 1 1 auto;
+    }
+
+    .siteNavigation a {
+        text-align: center;
+    }
+
+    .siteNavigation li:first-child {
+        display: none;
+    }
+}
+
+.describeSocial {
+    display: none;
+}
+
+.watchingDate {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    background-color: #3d757d;
+}
+
+#bannerInfo {
+    background-color: #15434a;
+    color: #ffffff;
+    font-size: 2em;
+    width: 100%;
+    padding: 1em;
+    display: none;
+}
+
+/*main definitions*/
+/*========================*/
+main {
+    padding: 1em 1em;
+    
+    justify-content: flex-start;
+}
+
+#calltoAction {
+    background-color: #15434a;
+    box-shadow: .1em .1em .8em .1em #15434a;
+}
+
+#welcomeimage { 
+    background-color: #15434a;  
+    width: 100%;
+}
+
+
+.centerInfo img,
+.leftInfo img,
+.spotsection img {
+    width: 100%;
+    overflow-x: auto;
+}
+.spotsection img {
+    max-width: 70px;
+    overflow: auto;
+}
+.imageInfo {
+    position: relative;
+    max-width: 100px;
+    float: left;
+    clear: left;
+    top: 50%;
+}
+
+#join {
+    text-align: center;
+    display: none;
+    background-color: #207178;
+    justify-self: stretch;
+}
+
+#sportlight3 {
+    display: none;
+    background-color: #ffffff;
+}
+
+#spotLite { 
+    background-color: #3d757d; 
+    box-shadow: .1em .1em .8em .1em #15434a;
+    justify-content: center;
+    align-items: center;
+}
+
+#event,
+#newsRelease {
+    background-color: #207178;
+    justify-self: stretch;
+    height: fit-content;
+    min-height: 320px;
+}
+
+#leftSection {
+    height: 100%;
+    padding-right: .5em;
+}
+
+#weather {
+    align-items: center;
+    padding: .5em;
+    min-height: 180px;
+    background-color: #15434a;
+    color: #ffffff;
+    box-shadow: .1em .1em .8em .1em #15434a;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.spotsection {
+    width: 100%;
+    max-width: 200px;
+    background-color: #ffffff;
+    justify-self: stretch;
+    padding-top: 1em;
+    margin: 10px;
+    box-shadow: .1em .1em .8em .1em #15434a;
+    text-align: center;
+    padding: 10px;
+}
+
+.weatherimage {
+    width: 75px;
+}
+
+
+.centerInfo,
+.leftInfo,
+.spotsection {
+    position: relative;
+    text-align: center;
+    box-shadow: .1em .1em .8em .1em #15434a;
+}
+
+.sectionInfo {
+    text-align: center;
+    width: 100%;
+}
+
+.titleInfo {
+    position: absolute;
+    top: .5em;
+    width: 100%;
+    background-color: rgba(21, 67, 74, 0.3);
+}
+
+.textInfo {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bubbleLink {
+    position: absolute;
+    background-color: #3d757d;
+    color: #ffffff;
+    border-radius: .5em;
+    padding: .5em;
+    text-decoration: none;
+    bottom: .1em;
+    right: 1em;
+}
+
+.bubbleImg {
+    position: absolute;
+    width: 7%;
+    max-width: 70px;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 1em;
+    top: .2em;
+    left: .7em;
+}
+
+
+
+/*discover options*/
+.cityTownList {
+    width: auto;
+}
+
+.cityDescription h2 {
+    padding-top: 1em;
+}
+
+.imageCity {
+    width: 100%;
+    border: 2px solid #15434a;
+    box-shadow: .1em .1em .8em .1em #15434a;
+    border-radius: 10%;
+}
+
+.imageCity img[data-src] {
+    filter: blur(0.2em);
+}
+
+.imageCity img {
+    filter: blur(0em);
+    transition: filter 1s;
+}
+
+.lastVisit {
+    background-color: #15434a;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.fieldDescription {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.formResults {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.companyStyle {
+    margin: 10px;
+    width: 100%;
+    max-width: 200px;
+    border: 2px solid #15434a;
+    box-shadow: .1em .1em .8em .1em #15434a;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.companyStyle img {
+    width: 100%;
+    max-width: 150px;
+}
+.Gold{
+    text-shadow:  .1em .1em  gold;
+}
+.Silver{
+    text-shadow:  .1em .1em  silver;
+}
+.Bronze{
+    text-shadow:  .1em .1em  brown;
+}
+.NonProfit{
+    display: none;
+}
+/*==================*/
+/*fotter definitions*/
+footer {
+    margin-top: 0px;
+    font-size: .9em;
+    background-color: #207178;
+    text-align: center;
+}
+
+.logoFooter {
+    width: 10rem;
+    height: auto;
+    padding: 1em;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+.contactInfo,
+.addressAndMail .developerInfo {
+    text-align: center;
+}
+
+.developerInfo {
+    font-style: italic;
+}
