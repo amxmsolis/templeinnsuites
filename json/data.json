@@ -3,7 +3,7 @@
       {
         "idComp": "1",
         "templename": "Mexico City Temple",
-        "templeshortname":"mex",
+        "templeshortname":"mexico",
         "street": "Avenida 510 #90",
         "neighborhood": "Col. San Juan de Aragon",
         "city": "Gustavo A.  Madero, CDMX",
@@ -11,16 +11,17 @@
         "phone": "+525550033700",
         "email": "cdmx@algo.com",
         "history": "open",
-        "services": ["clothes rent","store", "food area", "Ordenances card print"],
+        "services": ["Temple clothes rent","Temple store", "Family history consultation", "Food area", "Ordenances card print", "Visitors center"],
         "schedule": "",
-        "maplocationurl":"",
-        "cityweather":"",
-        "imageurl": "images/placeholder.png"
+        "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
+        "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=mexico,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
+        "imageurl": "images/t-mexico_city_temple_lds.jpg",
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Aragon-Zoo", "Bosque de Aragon"]
       },
       {
         "idComp": "2",
         "templename": "Veracruz Temple",
-        "templeshortname":"ver",
+        "templeshortname":"veracruz",
         "street": "Avenida 510 #90",
         "neighborhood": "Col. San Juan de Aragon",
         "city": "Gustavo A.  Madero, CDMX",
@@ -28,12 +29,63 @@
         "phone": "+525550033700",
         "email": "cdmx@algo.com",
         "history": "open",
-        "services": ["clothes rent","store", "food area", "Ordenances card print"],
+        "services": ["Temple store"],
         "schedule": "",
-        "maplocationurl":"",
-        "cityweather":"",
-        "imageurl": "images/placeholder.png"
+        "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
+        "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=veracruz,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
+        "imageurl": "images/t-veracruz_mexico_temple_lds.jpeg",
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Ocean View", "Veracruz Aquarium"]
+      },
+      {
+        "idComp": "3",
+        "templename": "Oaxaca Temple",
+        "templeshortname":"oaxaca",
+        "street": "Avenida 510 #90",
+        "neighborhood": "Col. San Juan de Aragon",
+        "city": "Gustavo A.  Madero, CDMX",
+        "cp": "07950",
+        "phone": "+525550033700",
+        "email": "cdmx@algo.com",
+        "history": "open",
+        "services": ["store"],
+        "schedule": "",
+        "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
+        "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=veracruz,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
+        "imageurl": "images/t-veracruz_mexico_temple_lds.jpeg",
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Oaxaca downtown"]
+      },
+      {
+        "idComp": "4",
+        "templename": "Guadalajara Temple",
+        "templeshortname":"guadalajara",
+        "street": "Avenida 510 #90",
+        "neighborhood": "Col. San Juan de Aragon",
+        "city": "Gustavo A.  Madero, Jalisco",
+        "cp": "07950",
+        "phone": "+525550033700",
+        "email": "cdmx@algo.com",
+        "history": "open",
+        "services": ["store"],
+        "schedule": "",
+        "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
+        "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=veracruz,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
+        "imageurl": "images/t-veracruz_mexico_temple_lds.jpeg",
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "City tour"]
       }
 
+    ],
+    "amenities":[
+      {
+        "idAmenitie": "1",
+        "amenitiename": "Rooms",
+        "imageurl": "images/a-room.jpg",
+        "amenitiedescription": ""
+      },
+      {
+        "idAmenitie": "2",
+        "amenitiename": "Indor pool",
+        "imageurl": "images/a-swimmingpool.jpg",
+        "amenitiedescription": ""
+      }
     ]
   }

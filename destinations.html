@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/templestyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
-    <title>Temple Inn & Suites - Location</title>
+    <title>Temple Inn & Suites - Locations</title>
     <meta name="description" content="List of temples and facilities">
 </head>
 
-<body onload="datesPageUpdate();templesListreview()">
+<body onload="datesPageUpdate();templesListreview(10)">
     <header>
         <nav class="upperMenu" id="myupperMenu">
             <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
                     alt="Go home"></a>
-            <a href="locations.html" title="Take a look of the Temple locations in Mexico">Locations</a>
+            <a href="destinations.html" title="Take a look of the Temple locations in Mexico">Destinations</a>
             <a href="discover.html" title="Know more about our specilized services and ammenities">Discover</a>
             <a href="groups.html" title="Are you planning an event or group visit?">Groups</a>
             <a href="reservations.html" title="Reserve your visit">Reservations</a>
@@ -34,15 +34,14 @@
 
 
     <main>
-        <h1>Welcome!</h1>
-        <p id="currentDate"></p>
-        <div id="bannerInfo"></div>
-        <h2>Temples</h2>
-        <p>When ever you visit a Temple, stay with us at Temple Inn & Suites</p>
-        <section id="locationsList" class="cards" >
-            <p>address, telephone, email, services, history, ordinance schedule, session schedule, temple closure schedule</p>
-        </section> 
+        <h1>Temples</h1>
 
+        <section id="locationsList" class="cards" >
+        </section> 
+        <section id="bannerInfo"><p>When ever you visit a Temple, stay with us at <strong>Temple Inn & Suites</strong>. 
+        <a href="discover.html" title="Let us show our services">Discover</a></p></section>
+
+        <p id="currentDate"></p>
     </main>
 
 

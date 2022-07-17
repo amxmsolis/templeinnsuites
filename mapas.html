@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/templestyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
+    <title>Temple Inn & Suites - Maps</title>
+    <meta name="description" content="Show the location map for each temple">
 </head>
-<body>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</body>
+
+<body onload="datesPageUpdate();weatherinformation();templesListreview(1)">
+    <header>
+        <nav class="upperMenu" id="myupperMenu">
+            <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
+                    alt="Go home"></a>
+            <a href="destinations.html" title="Take a look of the Temple locations in Mexico">Destinations</a>
+            <a href="discover.html" title="Know more about our specilized services and ammenities">Discover</a>
+            <a href="groups.html" title="Are you planning an event or group visit?">Groups</a>
+            <a href="reservations.html" title="Reserve your visit">Reservations</a>
+            <a href="terms.html" title="Legal and privacy information">Terms and Policies</a>
+            <a href="javascript:void(0);" class="menuIcon" onclick="hammMenu()">
+                <img src="images/logo-menu.webp" alt="">
+            </a>
+        </nav>
+        <div id="upperDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon"
+                    alt="Call us"><span class="describeSocial">+52 55 5999 9999</span></a></div>
+
+
+    </header>
+
+
+    <main>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
+
+
+
+    <footer>
+        <div class="lowerMenu">
+            <ul class="addressAndMail" id="lowerlogo">
+                <li><a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="lowerLogo"
+                            alt="Go home"></a></li>
+            </ul>
+            <ul class="addressAndMail" id="lowerPrivacy">
+                <li><a href="terms.html#privacy" title="Legal and privacy information"> Privacy</a>
+                </li>
+            </ul>
+            <ul class="addressAndMail" id="lowerAddress">
+                <li>&copy;<span id="currentYear"></span> Temple Inn & Suites</li>
+                <li>4800 Montgomery Ln #300</li>
+                <li>Bethesda, MD, US 20814</li>
+                <li><a href="mapas.html#hedquarters"><img src="images/logo-map.webp" class="socialIcon"
+                            alt="Find us in the map"><span class="describeSocial">Location map</span></a></li>
+                <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon"
+                            alt="Call us"><span class="describeSocial">+52 55 5999 9999</span></a>
+                </li>
+            </ul>
+            <ul class="addressAndMail" id="lowerSocial">
+                <li>
+                    <a href="https://www.facebook.com/ChurchofJesusChrist/" target="_blank">
+                        <img src="images/logo-facebook.webp" class="socialIcon" alt="Follow us in Facebook">
+                        <span class="describeSocial">TempleInnMX</span></a></li>
+                <li><a href="https://www.instagram.com/churchofjesuschrist/" target="_blank"><img
+                            src="images/logo-instagram.webp" class="socialIcon" alt="Follow us in Instagram"><span
+                            class="describeSocial">TempleInnMX</span></a>
+                </li>
+            </ul>
+            <ul class="addressAndMail" id="lowerUpdatedate">
+                <li>
+                    <p class="footerDate">Last Updated <span id="updateDate"></span></p>
+                </li>
+            </ul>
+        </div>
+
+    </footer>
+    <script src="js/templevalidation.js">
+    </script>
+
 </html>

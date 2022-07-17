@@ -25,7 +25,7 @@ function datesPageUpdate() {
     };
 }
 
-function templesListreview() {
+function templesListreview(howManyTemples) {
     const requestURL = 'json/data.json';
     const cards = document.querySelector('.cards');
 
@@ -34,11 +34,16 @@ function templesListreview() {
             return response.json();
         })
         .then(function (jsonObject) {
-            console.table(jsonObject); // temporary checking for valid response and data parsing
-
             const temples = jsonObject['temples'];
+            // temples.forEach(displaytemples);
+            let length =  temples.length;
+            if (length <= howManyTemples ){
+                howManyTemples=length;
+            }
 
-            temples.forEach(displaytemples);
+            for (let i = 0; i < howManyTemples; i++) {
+                displaytemples(temples[i]);
+            }
         });
 
     function displaytemples(temple) {
@@ -50,66 +55,73 @@ function templesListreview() {
         let parrafosecond = document.createElement('p');
         let parrafothird = document.createElement('p');
         let portrait = document.createElement('img');
-        let website = document.createElement('a');
+        let maplocationurl = document.createElement('iframe');
         let phone = document.createElement('p');
-        let likearea = document.createElement('span');
+        let likearea = document.createElement('button');
         let like = Number(window.localStorage.getItem(temple.templeshortname));
-        if (like !== 0) {
+        console.log(like);
+        if (like == 1) {
             likearea.textContent = "💗";
         } else {
             likearea.textContent = "🤍";
         }
 
-        h2.textContent = `${temple.templename}`;
-        h3.textContent = `${temple.membership}`;
+        h2.textContent = `${temple.templename}  ${temple.templeshortname}  ${like}`;
+        h3.textContent = `Services: ${temple.services}`;
         parrafofirst.textContent = `${temple.street}`;
         parrafosecond.textContent = `${temple.city}`;
         parrafothird.textContent = `CP ${temple.cp}`;
-        website.textContent = `${temple.website}`;
         phone.textContent = `${temple.phone}`;
 
         // Build the image attributes by using the setAttribute method for the src, alt, and loading attribute values. (Fill in the blank with the appropriate variable).
         portrait.setAttribute('src', temple.imageurl);
-        portrait.setAttribute('alt', `Logo of ${temple.templename}`);
+        portrait.setAttribute('alt', `Logo of ${temple.templename} `);
         portrait.setAttribute('loading', 'eager');
-        website.setAttribute('href', temple.website);
+        maplocationurl.setAttribute('src', temple.maplocationurl);
         likearea.setAttribute('id', temple.templeshortname);
         likearea.setAttribute('class', 'likeNo');
-        likearea.setAttribute('onclick', likesLocalStore(temple.templeshortname));
+        likearea.setAttribute('onclick', `likesLocalStore(\"${temple.templeshortname}\")`);
 
         // Add/append the section(card) with the h2 element
-        //card.setAttribute('class', 'templeStyle');
-        //h3.setAttribute('class', temple.membership);
+
+        maplocationurl.setAttribute('style', 'display: none');
+        card.setAttribute('class', 'templeStyle');
 
         card.appendChild(h2);
         card.appendChild(portrait);
+        card.appendChild(likearea);
         card.appendChild(h3);
         card.appendChild(parrafofirst);
         card.appendChild(parrafosecond);
         card.appendChild(parrafothird);
         card.appendChild(phone);
-        card.appendChild(website);
-        card.appendChild(likearea);
-
+        //card.appendChild(maplocationurl);
 
         // Add/append the existing HTML div with the cards class with the section(card)
         document.querySelector('section.cards').appendChild(card);
     }
 }
 
-function likesLocalStore(templeshortname) {
-    const tobeornotobe = document.querySelector(`#${templeshortname}`);
-    let likes = Number(window.localStorage.getItem(templeshortname));
+function likesLocalStore(t) {
+    console.log(t);
+    let likes = Number(window.localStorage.getItem(t));
+    console.log(likes);
     if (likes !== 0) {
         likes = 0;
+        document.getElementById(t).textContent = "🤍";
     } else {
         likes = 1;
+        document.getElementById(t).textContent = "💗";
     }
-    localStorage.setItem("${templeshortname}", likes);
-
+    localStorage.setItem(`${t}`, likes);
 }
 
-function weatherinformation(q) {
+
+
+
+
+
+function weatherinformation(place) {
     const currentTempTitle = document.querySelector('#tempTitle');
     const currentTemp = document.querySelector('#tempVar');
     const currentSpeed = document.querySelector('#speedVar');
@@ -117,15 +129,14 @@ function weatherinformation(q) {
     const weatherIcon = document.querySelector('#weatherIcon');
     const captionDesc = document.querySelector('figcaption');
 
-    
-    const weatherurl = `https://api.openweathermap.org/data/2.5/weather?q=mexico,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
+
+    const weatherurl = `https://api.openweathermap.org/data/2.5/weather?q=${place},mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
 
     async function apiFetch() {
         try {
             const response = await fetch(weatherurl);
             if (response.ok) {
                 const data = await response.json();
-                console.log(data);
                 displayResults(data);
             } else {
                 throw Error(await response.text());
@@ -163,10 +174,7 @@ function weatherinformation(q) {
         currentWind.innerHTML = `Wind Chill: <strong>${windVar}</strong> `;
 
 
-        //document.querySelector("#speedVar").textContent = speedVar;
-        //document.querySelector("#windVar").textContent = windVar;
-
-
     }
 
 }
+

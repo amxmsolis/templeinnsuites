@@ -12,12 +12,12 @@
     <meta name="description" content="Welcome to Temple Inn and Suites Mexico">
 </head>
 
-<body onload="datesPageUpdate();weatherinformation();">
+<body onload="datesPageUpdate();weatherinformation('mexico');templesListreview(1)">
     <header>
         <nav class="upperMenu" id="myupperMenu">
             <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
                     alt="Go home"></a>
-            <a href="locations.html" title="Take a look of the Temple locations in Mexico">Locations</a>
+            <a href="destinations.html" title="Take a look of the Temple locations in Mexico">Destinations</a>
             <a href="discover.html" title="Know more about our specilized services and ammenities">Discover</a>
             <a href="groups.html" title="Are you planning an event or group visit?">Groups</a>
             <a href="reservations.html" title="Reserve your visit">Reservations</a>
@@ -34,16 +34,36 @@
 
 
     <main>
-        <h1>Welcome!</h1>
-        <p id="currentDate"></p>
-        <div id="bannerInfo"></div>
-        <section id="bookingForm">
-            <h2>Reserve</h2>
+
+        <section id="bookingForm" >
+            <div class="sectionInfo">
+                <section id="bannerInfo"><p>When ever you visit a Temple, stay with us at <strong>Temple Inn & Suites</strong>. 
+                </p></section>
+                <form class="homeReserve"> 
+                    <label for="destination" class="fieldDescription">Destination</label>
+                    <input type="text" id="destination" name="destination" value="" placeholder="City name">
+                    <label for="fromdate" class="fieldDescription">From</label>
+                    <input type="date" id="fromdate" name="fromdate" value="" placeholder=""> 
+                    <label for="todate" class="fieldDescription">To</label>
+                    <input type="date" id="todate" name="todate" value="" placeholder=""> 
+                    <input type="submit" value="Reserve">
+                </form>
+            </div>
+            <div class="sectionImage">
+                <picture id="welcomeimage" lass="homeImageStock" >
+                    <source media="(min-width: 51em)" srcset="images/s-templetop-large.webp">
+                    <source media="(min-width: 32.5em)" srcset="images/s-templetop-medium.webp">
+                    <img src="images/s-templetop-small.webp" class="homeImageStock" alt="Temple top">
+                </picture>
+
+            </div>
         </section>
-        <section id="locationOfMonth">
-            <h2>Temple of the month</h2>
+        <section id="templos" class="cards">
+
         </section>
-        <section id="locationOfMonth">
+        <section id="locationOfMonth" class="cards">
+        </section>
+        <section id="cpontactus">
             <h2>Contact us</h2>
         </section>
         <section id="weather">
@@ -54,6 +74,17 @@
             <figcaption></figcaption>
         </section>
 
+        <section>📄 The Home page is a contemporary, exciting landing page providing images of temples and temple attending activities and must include the following:
+            A call to action to make a hotel reservation
+            Readily available navigation and contact information for the hotel chain
+            Summary information about a temple of your choosing
+            Social media links (at least two)
+            Current weather card that summarizes the conditions. You must use the One Call API (1.0) at openweathermap.org (Links to an external site.) and include the following content.
+            The current temperature, current condition description, and humidity.
+            Weather alerts if available/applicable from the government and display it as a closeable message at the top of the page. Closeable means the user can click to remove the alert.
+            Display and label a three day forecast of the "day" temperature using the current date. This can be designed in another card or area.</section>
+
+            <p id="currentDate"></p>
     </main>
 
 
@@ -71,7 +102,7 @@
             <ul class="addressAndMail" id="lowerAddress">
                 <li>&copy;<span id="currentYear"></span> Temple Inn & Suites</li>
                 <li>4800 Montgomery Ln #300</li>
-                <li>Bethesda, MD, US 2081</li>
+                <li>Bethesda, MD, US 20814</li>
                 <li><a href="mapas.html#hedquarters"><img src="images/logo-map.webp" class="socialIcon"
                             alt="Find us in the map"><span class="describeSocial">Location map</span></a></li>
                 <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
@@ -97,6 +128,5 @@
 
     </footer>
     <script src="js/templevalidation.js">
-    </script>
-
+</script>
 </html>

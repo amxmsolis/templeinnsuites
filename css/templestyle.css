@@ -168,11 +168,54 @@ li.socialIconList{
 .describeSocial{
     display: none;
 }
+ 
 
-.likeNo{
-    content: " &#128151; ";
+form {
+    display: flex;
+    flex-direction: column;
+}
+ 
+input[type=submit] {
+    background-color: #207178;
+    color: white;
+    padding-top: .3em;
 }
 
+#bookingForm{
+    position: relative;
+}
+.sectionInfo{
+    position: absolute;
+    bottom: .7em;
+    right: .7em;
+    background-color: rgb(32,113,120, .8);
+    color: #ffffff;
+    padding: .7em; 
+}
+.homeImageStock{
+    width:100%;
+}
+.fieldDescription {
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.templeStyle {
+    width: 100%;
+    border: 2px solid #00A896;
+    box-shadow: .1em .1em .8em .1em #15434a;
+    text-align: center;
+    
+}
+
+.templeStyle img {
+    width: 100%;
+    max-width: 150px;
+}
+.likeNo{
+    background-color: transparent;
+    border: none;
+}
 /*Other sizes*/
 @media (max-width: 32.5em) {
  
@@ -200,5 +243,26 @@ li.socialIconList{
     #upperDial{
         display: none;
     }
-
+    .templeStyle img{
+        width: 250px;
+    }
+ 
 }
+
+#atributions{
+    width: 100%;
+    padding: 1em;
+}
+#atributions th {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: #00A896;
+    color: white;
+  }
+
+#atributions tr:nth-child(even){background-color: #f2f2f2;}
+#atributions td{
+    border: .1em solid #207178;
+}
+

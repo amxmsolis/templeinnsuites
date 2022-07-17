@@ -17,7 +17,7 @@
         <nav class="upperMenu" id="myupperMenu">
             <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
                     alt="Go home"></a>
-            <a href="locations.html" title="Take a look of the Temple locations in Mexico">Locations</a>
+            <a href="destinations.html" title="Take a look of the Temple locations in Mexico">Destinations</a>
             <a href="discover.html" title="Know more about our specilized services and ammenities">Discover</a>
             <a href="groups.html" title="Are you planning an event or group visit?">Groups</a>
             <a href="reservations.html" title="Reserve your visit">Reservations</a>
@@ -36,6 +36,15 @@
     <main>
         <h1>Reservations</h1>
         <form id="registrationForm" method="get" target="_self" action="thankyou.html">
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" value="" placeholder="City name">
+            <label for="fromdate">From</label>
+            <input type="date" id="fromdate" name="fromdate" value="" placeholder=""> 
+            <label for="todate">To</label>
+            <input type="date" id="todate" name="todate" value="" placeholder=""> 
+            <input type="submit" value="Reserve">
+
+            
             <label for="fullName" class="fieldDescription">Full name *<span class="alertfullName"></span></label>
             <input type="text" name="fullName" id="fullName" value="" placeholder="Full name" required>
 
