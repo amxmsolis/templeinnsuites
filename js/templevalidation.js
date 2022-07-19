@@ -51,12 +51,15 @@ function templesListreview(howManyTemples) {
         let card = document.createElement('section');
         let h2 = document.createElement('h2');
         let h3 = document.createElement('h3');
+        let breakline = document.createElement('br');
         let parrafofirst = document.createElement('p');
         let parrafosecond = document.createElement('p');
         let parrafothird = document.createElement('p');
+        let parrafofourth = document.createElement('p');
         let portrait = document.createElement('img');
         let maplocationurl = document.createElement('iframe');
-        let phone = document.createElement('p');
+        let phone = document.createElement('a');
+        let email = document.createElement('a');
         let likearea = document.createElement('button');
         let like = Number(window.localStorage.getItem(temple.templeshortname));
         console.log(like);
@@ -66,12 +69,17 @@ function templesListreview(howManyTemples) {
             likearea.textContent = "🤍";
         }
 
-        h2.textContent = `${temple.templename}  ${temple.templeshortname}  ${like}`;
-        h3.textContent = `Services: ${temple.services}`;
-        parrafofirst.textContent = `${temple.street}`;
-        parrafosecond.textContent = `${temple.city}`;
-        parrafothird.textContent = `CP ${temple.cp}`;
+        h2.textContent = `${temple.templename}`;
+        h3.textContent = `${temple.history}`;
+        parrafofirst.textContent = `Address: ${temple.address}`;
+        parrafosecond.textContent = `${temple.schedule}`;
+        parrafothird.textContent = `Temple services: ${temple.services}`;
+        parrafofourth.textContent = `Near services: ${temple.nearservices}`;
+        phone.setAttribute('href', `tel: ${temple.phone}`);
         phone.textContent = `${temple.phone}`;
+        
+        email.setAttribute('href', `mailto:${temple.email}`);
+        email.textContent = `${temple.email}`;
 
         // Build the image attributes by using the setAttribute method for the src, alt, and loading attribute values. (Fill in the blank with the appropriate variable).
         portrait.setAttribute('src', temple.imageurl);
@@ -87,13 +95,16 @@ function templesListreview(howManyTemples) {
         maplocationurl.setAttribute('style', 'display: none');
         card.setAttribute('class', 'templeStyle');
 
-        card.appendChild(h2);
         card.appendChild(portrait);
         card.appendChild(likearea);
+        card.appendChild(h2);
         card.appendChild(h3);
         card.appendChild(parrafofirst);
         card.appendChild(parrafosecond);
         card.appendChild(parrafothird);
+        card.appendChild(parrafofourth);
+        card.appendChild(email);
+        card.appendChild(breakline);
         card.appendChild(phone);
         //card.appendChild(maplocationurl);
 

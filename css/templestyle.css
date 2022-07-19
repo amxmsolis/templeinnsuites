@@ -202,6 +202,7 @@ input[type=submit] {
 
 .templeStyle {
     width: 100%;
+    max-width: 32.4em;
     border: 2px solid #00A896;
     box-shadow: .1em .1em .8em .1em #15434a;
     text-align: center;
@@ -210,16 +211,34 @@ input[type=submit] {
 
 .templeStyle img {
     width: 100%;
-    max-width: 150px;
+    max-width: 32.4em;
 }
+
 .likeNo{
     background-color: transparent;
     border: none;
 }
+
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+
 /*Other sizes*/
 @media (max-width: 32.5em) {
- 
-
+    .templeStyle {
+        width: 100%;
+        max-width: 16em;
+    }
+    .templeStyle img {
+        width: 100%;
+        max-width: 16em;
+    }
+    .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 @media (min-width: 51em) {
@@ -246,7 +265,22 @@ input[type=submit] {
     .templeStyle img{
         width: 250px;
     }
- 
+
+    .templeStyle {
+        width: 100%;
+        max-width: 25em;
+    }
+    .templeStyle img {
+        width: 100%;
+        max-width: 25em;
+    }
+    .cards{
+        grid-column: span 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 }
 
 #atributions{
