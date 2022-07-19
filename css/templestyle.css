@@ -16,6 +16,10 @@ header {
     background-color: #207178;
     color: #ffffff;
 }
+a {
+    font-weight: bold;
+    color:#000000; 
+}
 
 .upperMenu a {
     float: left;
@@ -175,6 +179,10 @@ form {
     flex-direction: column;
 }
  
+input{
+    border: 1px solid #207178;
+    background-color: #ffffff;
+}
 input[type=submit] {
     background-color: #207178;
     color: white;
