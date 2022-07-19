@@ -135,13 +135,15 @@ function likesLocalStore(t) {
 function weatherinformation(place) {
     const currentTempTitle = document.querySelector('#tempTitle');
     const currentTemp = document.querySelector('#tempVar');
+    const currentHumidity = document.querySelector('#humidityVar');
     const currentSpeed = document.querySelector('#speedVar');
     const currentWind = document.querySelector('#windVar');
     const weatherIcon = document.querySelector('#weatherIcon');
-    const captionDesc = document.querySelector('figcaption');
+    const captionDesc = document.querySelector('#currentWeatherImage');
 
-
-    const weatherurl = `https://api.openweathermap.org/data/2.5/weather?q=${place},mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
+    //exclude=hourly,minutely&
+    const weatherurl =
+        `https://api.openweathermap.org/data/2.5/onecall?lat=19.386808&lon=-99.1938216&units=metric&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
 
     async function apiFetch() {
         try {
@@ -160,15 +162,17 @@ function weatherinformation(place) {
     apiFetch();
 
     function displayResults(weatherData) {
-        const imageSrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-        const imageDescription = weatherData.weather[0].description;
-        const speedVar = weatherData.wind.speed;
-        const tempVar = weatherData.main.temp;
+        console.log(weatherData);
+        const imageSrc = `https://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`;
+        const imageDescription = weatherData.current.weather[0].description;
+        const speedVar = weatherData.current.wind_speed;
+        const tempVar = weatherData.current.temp;
         let windVar;
         if (tempVar > 50) {
             windVar = "NA";
         } else {
-            windVar = (35.74 + (0.6215 * tempVar)) - (35.75 * Math.pow(speedVar, 0.16)) + (0.4275 * tempVar * Math.pow(speedVar, 0.16));
+            windVar = (35.74 + (0.6215 * tempVar)) - (35.75 * Math.pow(speedVar, 0.16)) + (0.4275 * tempVar * Math
+                .pow(speedVar, 0.16));
             windVar = Math.round(windVar);
         }
 
@@ -179,13 +183,47 @@ function weatherinformation(place) {
         captionDesc.setAttribute('class', 'capitalizeClass');
         captionDesc.innerHTML = `${imageDescription}`;
 
-        currentTempTitle.innerHTML = `${weatherData.name}`;
-        currentTemp.innerHTML = `Temp: <strong>${weatherData.main.temp.toFixed(0)}</strong>°F `;
-        currentSpeed.innerHTML = `Speed: <strong>${speedVar}</strong> mph `;
+        currentTempTitle.innerHTML = `Mexico City`;
+        currentTemp.innerHTML = `${weatherData.current.temp} °C `;
+        currentHumidity.innerHTML = `Humidity: <strong>${weatherData.current.humidity}</strong> % `;
+        currentSpeed.innerHTML = `Winds <strong>${speedVar}</strong> mph `;
         currentWind.innerHTML = `Wind Chill: <strong>${windVar}</strong> `;
 
+        document.querySelector('#weatherTemp0').innerHTML =
+            `${weatherData.daily[0].temp.min}-${weatherData.daily[0].temp.max}°C `;
+        document.querySelector('#weatherTemp1').innerHTML =
+            `${weatherData.daily[1].temp.min}-${weatherData.daily[1].temp.max}°C `;
+        document.querySelector('#weatherTemp2').innerHTML =
+            `${weatherData.daily[2].temp.min}-${weatherData.daily[2].temp.max}°C `;
+        document.querySelector('#weatherTemp3').innerHTML =
+            `${weatherData.daily[3].temp.min}-${weatherData.daily[3].temp.max}°C `;
 
+        document.querySelector('#weatherHumi0').innerHTML = `Humidity ${weatherData.daily[0].temp.day}% `;
+        document.querySelector('#weatherHumi1').innerHTML = `Humidity ${weatherData.daily[1].temp.day}% `;
+        document.querySelector('#weatherHumi2').innerHTML = `Humidity ${weatherData.daily[2].temp.day}% `;
+        document.querySelector('#weatherHumi3').innerHTML = `Humidity ${weatherData.daily[3].temp.day}% `;
+
+        document.querySelector('#weatherImg0').setAttribute('src',
+            `https://openweathermap.org/img/w/${weatherData.daily[0].weather[0].icon}.png`);
+        document.querySelector('#weatherImg0').setAttribute('alt',
+            `A ${weatherData.daily[0].weather[0].description} icon is shown`);
+        document.querySelector('#weatherImg1').setAttribute('src',
+            `https://openweathermap.org/img/w/${weatherData.daily[1].weather[0].icon}.png`);
+        document.querySelector('#weatherImg1').setAttribute('alt',
+            `A ${weatherData.daily[1].weather[0].description} icon is shown`);
+        document.querySelector('#weatherImg2').setAttribute('src',
+            `https://openweathermap.org/img/w/${weatherData.daily[2].weather[0].icon}.png`);
+        document.querySelector('#weatherImg2').setAttribute('alt',
+            `A ${weatherData.daily[2].weather[0].description} icon is shown`);
+        document.querySelector('#weatherImg3').setAttribute('src',
+            `https://openweathermap.org/img/w/${weatherData.daily[3].weather[0].icon}.png`);
+        document.querySelector('#weatherImg3').setAttribute('alt',
+            `A ${weatherData.daily[3].weather[0].description} icon is shown`);
+
+        document.querySelector('#weatherDesc0').innerHTML = `${weatherData.daily[0].weather[0].description}`;
+        document.querySelector('#weatherDesc1').innerHTML = `${weatherData.daily[1].weather[0].description}`;
+        document.querySelector('#weatherDesc2').innerHTML = `${weatherData.daily[2].weather[0].description}`;
+        document.querySelector('#weatherDesc3').innerHTML = `${weatherData.daily[3].weather[0].description}`;
     }
-
 }
 

@@ -233,6 +233,41 @@ input[type=submit] {
     -ms-flex-align: center;
 }
 
+
+#weather {
+    max-width: 50em;
+    background-color: #ffffff;
+    border: 2px solid #00A896;
+    box-shadow: .1em .1em .8em .1em #15434a;
+
+}
+.capitalizeClass {
+    text-transform: capitalize;
+}
+
+.weatherCard {
+    width: 100%;
+    max-width: 30em;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+.weatherCard img{
+    width: 100%;
+    max-width: 10em;
+}
+.weatherCardForecast {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.tempVar {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
 /*Other sizes*/
 @media (min-width: 32.5em) {
     .templeStyle {

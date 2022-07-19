@@ -67,24 +67,48 @@
             <h2>Contact us</h2>
         </section>
         <section id="weather">
-            <h2>Weather</h2>
-            <h3 id="tempTitle"></h3>
-            <p><span id="tempVar"></span><br> <span id="speedVar"></span><br><span id="windVar"></span></p>
-            <img id="weatherIcon" class="weatherimage" src="images/placeholder.png" alt="">
-            <figcaption></figcaption>
+            <h1>Weather</h1>
+            <h2 id="tempTitle">Mexico City</h2>
+            <div id="currentWeather" class="weatherCard">
+                <p id="currentDate"></p>
+                <p id="tempVar" class="tempVar"></p>
+                <img id="weatherIcon" class="weatherimage" src="../images/placeholder.png" alt="">
+                <figcaption><span id="currentWeatherImage"></span> <span id="speedVar"></span> <span id="windVar"></span>
+                    <span id="humidityVar"></span></figcaption>
+            </div>
+    
+            <h3>Forecast</h3>
+            <div id="forecastWeater">
+                <div class="weatherCardForecast">
+                    <span id="weatherTemp0"></span>
+                    <img id="weatherImg0" class="weatherimage" src="../images/placeholder.png" alt="">
+                    <figcaption id="weatherDesc0"></figcaption>
+                    <span id="weatherHumi0"></span>
+                </div>
+                <div class="weatherCardForecast">
+                    <span id="weatherTemp1"></span>
+                    <img id="weatherImg1" class="weatherimage" src="../images/placeholder.png" alt="">
+                    <figcaption id="weatherDesc1"></figcaption>
+                    <span id="weatherHumi1"></span>
+                </div>
+                <div class="weatherCardForecast">
+                    <span id="weatherTemp2"></span>
+                    <img id="weatherImg2" class="weatherimage" src="../images/placeholder.png" alt="">
+                    <figcaption id="weatherDesc2"></figcaption>
+                    <span id="weatherHumi2"></span>
+                </div>
+                <div class="weatherCardForecast">
+                    <span id="weatherTemp3"></span>
+                    <img id="weatherImg3" class="weatherimage" src="../images/placeholder.png" alt="">
+                    <figcaption id="weatherDesc3"></figcaption>
+                    <span id="weatherHumi3"></span>
+                </div>
+            </div>
         </section>
+    
+ 
 
-        <section>📄 The Home page is a contemporary, exciting landing page providing images of temples and temple attending activities and must include the following:
-            A call to action to make a hotel reservation
-            Readily available navigation and contact information for the hotel chain
-            Summary information about a temple of your choosing
-            Social media links (at least two)
-            Current weather card that summarizes the conditions. You must use the One Call API (1.0) at openweathermap.org (Links to an external site.) and include the following content.
-            The current temperature, current condition description, and humidity.
-            Weather alerts if available/applicable from the government and display it as a closeable message at the top of the page. Closeable means the user can click to remove the alert.
-            Display and label a three day forecast of the "day" temperature using the current date. This can be designed in another card or area.</section>
-
-            <p id="currentDate"></p>
+            
     </main>
 
 

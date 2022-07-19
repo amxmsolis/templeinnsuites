@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forecast</title>
+    <style>
+        #weather {
+            background-color: #ffffff;
+
+        }
+        .capitalizeClass {
+            text-transform: capitalize;
+        }
+
+        .weatherCard {
+            width: 100%;
+            max-width: 30em;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+        }
+        .weatherCard img{
+            width: 100%;
+            max-width: 10em;
+        }
+        .weatherCardForecast {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .tempVar {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="weather">
+        <h1>Weather</h1>
+        <h2 id="tempTitle">Mexico City</h2>
+        <div id="currentWeather" class="weatherCard">
+            <p id="currentDate"></p>
+            <p id="tempVar" class="tempVar"></p>
+            <img id="weatherIcon" class="weatherimage" src="../images/placeholder.png" alt="">
+            <figcaption><span id="currentWeatherImage"></span> <span id="speedVar"></span> <span id="windVar"></span>
+                <span id="humidityVar"></span></figcaption>
+        </div>
+
+        <h3>Forecast</h3>
+        <div id="forecastWeater">
+            <div class="weatherCardForecast">
+                <span id="weatherTemp0"></span>
+                <img id="weatherImg0" class="weatherimage" src="../images/placeholder.png" alt="">
+                <figcaption id="weatherDesc0"></figcaption>
+                <span id="weatherHumi0"></span>
+            </div>
+            <div class="weatherCardForecast">
+                <span id="weatherTemp1"></span>
+                <img id="weatherImg1" class="weatherimage" src="../images/placeholder.png" alt="">
+                <figcaption id="weatherDesc1"></figcaption>
+                <span id="weatherHumi1"></span>
+            </div>
+            <div class="weatherCardForecast">
+                <span id="weatherTemp2"></span>
+                <img id="weatherImg2" class="weatherimage" src="../images/placeholder.png" alt="">
+                <figcaption id="weatherDesc2"></figcaption>
+                <span id="weatherHumi2"></span>
+            </div>
+            <div class="weatherCardForecast">
+                <span id="weatherTemp3"></span>
+                <img id="weatherImg3" class="weatherimage" src="../images/placeholder.png" alt="">
+                <figcaption id="weatherDesc3"></figcaption>
+                <span id="weatherHumi3"></span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        document.querySelector('#currentDate').textContent = new Date().toLocaleDateString();
+        const currentTempTitle = document.querySelector('#tempTitle');
+        const currentTemp = document.querySelector('#tempVar');
+        const currentHumidity = document.querySelector('#humidityVar');
+        const currentSpeed = document.querySelector('#speedVar');
+        const currentWind = document.querySelector('#windVar');
+        const weatherIcon = document.querySelector('#weatherIcon');
+        const captionDesc = document.querySelector('#currentWeatherImage');
+
+        //exclude=hourly,minutely&
+        const weatherurl =
+            `https://api.openweathermap.org/data/2.5/onecall?lat=19.386808&lon=-99.1938216&units=metric&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
+
+        async function apiFetch() {
+            try {
+                const response = await fetch(weatherurl);
+                if (response.ok) {
+                    const data = await response.json();
+                    displayResults(data);
+                } else {
+                    throw Error(await response.text());
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        apiFetch();
+
+        function displayResults(weatherData) {
+            console.log(weatherData);
+            const imageSrc = `https://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`;
+            const imageDescription = weatherData.current.weather[0].description;
+            const speedVar = weatherData.current.wind_speed;
+            const tempVar = weatherData.current.temp;
+            let windVar;
+            if (tempVar > 50) {
+                windVar = "NA";
+            } else {
+                windVar = (35.74 + (0.6215 * tempVar)) - (35.75 * Math.pow(speedVar, 0.16)) + (0.4275 * tempVar * Math
+                    .pow(speedVar, 0.16));
+                windVar = Math.round(windVar);
+            }
+
+
+            weatherIcon.setAttribute('src', imageSrc);
+            weatherIcon.setAttribute('alt', `A ${imageDescription} icon is shown`);
+
+            captionDesc.setAttribute('class', 'capitalizeClass');
+            captionDesc.innerHTML = `${imageDescription}`;
+
+            currentTempTitle.innerHTML = `Mexico City`;
+            currentTemp.innerHTML = `${weatherData.current.temp} °C `;
+            currentHumidity.innerHTML = `Humidity: <strong>${weatherData.current.humidity}</strong> % `;
+            currentSpeed.innerHTML = `Winds <strong>${speedVar}</strong> mph `;
+            currentWind.innerHTML = `Wind Chill: <strong>${windVar}</strong> `;
+
+            document.querySelector('#weatherTemp0').innerHTML =
+                `${weatherData.daily[0].temp.min}-${weatherData.daily[0].temp.max}°C `;
+            document.querySelector('#weatherTemp1').innerHTML =
+                `${weatherData.daily[1].temp.min}-${weatherData.daily[1].temp.max}°C `;
+            document.querySelector('#weatherTemp2').innerHTML =
+                `${weatherData.daily[2].temp.min}-${weatherData.daily[2].temp.max}°C `;
+            document.querySelector('#weatherTemp3').innerHTML =
+                `${weatherData.daily[3].temp.min}-${weatherData.daily[3].temp.max}°C `;
+
+            document.querySelector('#weatherHumi0').innerHTML = `Humidity ${weatherData.daily[0].temp.day}% `;
+            document.querySelector('#weatherHumi1').innerHTML = `Humidity ${weatherData.daily[1].temp.day}% `;
+            document.querySelector('#weatherHumi2').innerHTML = `Humidity ${weatherData.daily[2].temp.day}% `;
+            document.querySelector('#weatherHumi3').innerHTML = `Humidity ${weatherData.daily[3].temp.day}% `;
+
+            document.querySelector('#weatherImg0').setAttribute('src',
+                `https://openweathermap.org/img/w/${weatherData.daily[0].weather[0].icon}.png`);
+            document.querySelector('#weatherImg0').setAttribute('alt',
+                `A ${weatherData.daily[0].weather[0].description} icon is shown`);
+            document.querySelector('#weatherImg1').setAttribute('src',
+                `https://openweathermap.org/img/w/${weatherData.daily[1].weather[0].icon}.png`);
+            document.querySelector('#weatherImg1').setAttribute('alt',
+                `A ${weatherData.daily[1].weather[0].description} icon is shown`);
+            document.querySelector('#weatherImg2').setAttribute('src',
+                `https://openweathermap.org/img/w/${weatherData.daily[2].weather[0].icon}.png`);
+            document.querySelector('#weatherImg2').setAttribute('alt',
+                `A ${weatherData.daily[2].weather[0].description} icon is shown`);
+            document.querySelector('#weatherImg3').setAttribute('src',
+                `https://openweathermap.org/img/w/${weatherData.daily[3].weather[0].icon}.png`);
+            document.querySelector('#weatherImg3').setAttribute('alt',
+                `A ${weatherData.daily[3].weather[0].description} icon is shown`);
+
+            document.querySelector('#weatherDesc0').innerHTML = `${weatherData.daily[0].weather[0].description}`;
+            document.querySelector('#weatherDesc1').innerHTML = `${weatherData.daily[1].weather[0].description}`;
+            document.querySelector('#weatherDesc2').innerHTML = `${weatherData.daily[2].weather[0].description}`;
+            document.querySelector('#weatherDesc3').innerHTML = `${weatherData.daily[3].weather[0].description}`;
+        }
+    </script>
+</body>
+
+</html>
