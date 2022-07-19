@@ -202,7 +202,7 @@ input[type=submit] {
 
 .templeStyle {
     width: 100%;
-    max-width: 32.4em;
+    max-width: 50em;
     border: 2px solid #00A896;
     box-shadow: .1em .1em .8em .1em #15434a;
     text-align: center;
@@ -211,7 +211,7 @@ input[type=submit] {
 
 .templeStyle img {
     width: 100%;
-    max-width: 32.4em;
+    max-width: 50em;
 }
 
 .likeNo{
@@ -222,17 +222,18 @@ input[type=submit] {
 .cards {
     display: flex;
     flex-direction: column;
+    -ms-flex-align: center;
 }
 
 /*Other sizes*/
-@media (max-width: 32.5em) {
+@media (min-width: 32.5em) {
     .templeStyle {
-        width: 100%;
-        max-width: 16em;
+        width: 50%;
+        max-width: 15em;
     }
     .templeStyle img {
         width: 100%;
-        max-width: 16em;
+        max-width: 25em;
     }
     .cards{
         display: flex;
