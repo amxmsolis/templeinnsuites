@@ -37,17 +37,14 @@
 
         <section id="bookingForm">
             <div class="sectionInfo">
-                <section id="bannerInfo">
-                    <p>When ever you visit a Temple, stay with us at <strong>Temple Inn & Suites</strong>.
-                    </p>
-                </section>
+
                 <form id="homeReserve" class="homeReserve" method="get" target="_self" action="reservations.html">
                     <label for="destination" class="fieldDescription">Destination</label>
                     <input type="text" id="destination" name="destination" value="" placeholder="City name" required>
                     <label for="fromdate" class="fieldDescription">From</label>
-                    <input type="date" id="fromdate" name="fromdate" value="" placeholder="" required>
+                    <input type="date" id="fromdate" name="fromdate" value="" required>
                     <label for="todate" class="fieldDescription">To</label>
-                    <input type="date" id="todate" name="todate" value="" placeholder="" required>
+                    <input type="date" id="todate" name="todate" value="" required>
                     <input type="submit" value="Reserve">
                 </form>
             </div>
@@ -105,16 +102,18 @@
             </div>
         </section>
 
+        <section id="banner" class="groupSection">
+            <h2>When ever you visit a Temple, stay with us at  Temple Inn & Suites</h2>  
+       </section>
 
         <section id="wedding" class="groupSection">
             <div class="sectionImage">
-                <picture id="welcomeimage" lass="homeImageStock">
+                <picture id="weddingImage" lass="homeImageStock">
                     <img src="images/g-marriage.jpg" class="homeImageStock" alt="">
                 </picture>
             </div>
             <div class="groupInfo">
-                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="groups.html#wedding">
-                    <input type="hidden" id="evento" name="evento" value="Wedding">
+                <form id="gotoWedding" class="homeReserve" method="get" target="_self" action="groups.html#wedding">
                     <input type="submit" value="Wedding plans?">
                 </form>
             </div>
@@ -122,13 +121,12 @@
         
         <section id="youth" class="groupSection">
             <div class="sectionImage">
-                <picture id="welcomeimage" lass="homeImageStock">
+                <picture id="youthImage" lass="homeImageStock">
                     <img src="images/g-youth_attending_temple.png" class="homeImageStock" alt="">
                 </picture>
             </div>
             <div class="groupInfo">
-                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="groups.html#leaders">
-                    <input type="hidden" id="evento" name="evento" value="Leaders">
+                <form id="gotoLeaders" class="homeReserve" method="get" target="_self" action="groups.html#leaders">
                     <input type="submit" value="Youth excursion to Temple?">
                 </form>
             </div>
@@ -136,12 +134,12 @@
 
         <section id="mission" class="groupSection">
             <div class="sectionImage">
-                <picture id="welcomeimage" lass="homeImageStock">
+                <picture id="missionImage" lass="homeImageStock">
                     <img src="images/g-seniormission2.jpg" class="homeImageStock" alt="">
                 </picture>
             </div>
             <div class="groupInfo">
-                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="groups.html#mission">
+                <form id="gotoMission" class="homeReserve" method="get" target="_self" action="groups.html#mission">
                     <input type="submit" value="Senior mission plans?">
                 </form>
             </div>

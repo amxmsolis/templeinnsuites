@@ -41,17 +41,17 @@
             <label for="destination">Destination</label>
             <input type="text" id="destination" name="destination" value="" placeholder="City name">
             <label for="fromdate">From</label>
-            <input type="date" id="fromdate" name="fromdate" value="" placeholder="">
+            <input type="date" id="fromdate" name="fromdate" value="" >
             <label for="todate">To</label>
-            <input type="date" id="todate" name="todate" value="" placeholder="">
+            <input type="date" id="todate" name="todate" value="" >
 
             <fieldset>
                 <legend>Room </legend>
             <div><input type="radio" id="singleroom" name="room" value="Room">
-                <label for="normalroom" class="fieldDescription">Single room <span class="alertEvento"></span></label>
+                <label for="singleroom" class="fieldDescription">Single room <span class="alertEvento"></span></label>
             </div>
-            <div><input type="radio" id="suitte" name="room" value="Suitte">
-                <label for="suitte" class="fieldDescription">Suitte (accommodations in kitchenette suites)<span class="alertEvento"></span></label></div>
+            <div><input type="radio" id="suite" name="room" value="Suite">
+                <label for="suite" class="fieldDescription">Suite (accommodations in kitchenette suites)<span class="alertEvento"></span></label></div>
 </fieldset>
 
             <fieldset>
@@ -60,7 +60,7 @@
                     <label for="accomodation" class="fieldDescription">Just accomodation<span
                             class="alertEvento"></span></label></div>
                 <div><input type="radio" id="wedding" name="evento" value="Wedding">
-                    <label for="weding" class="fieldDescription">Wedding Event<span class="alertEvento"></span></label>
+                    <label for="wedding" class="fieldDescription">Wedding Event<span class="alertEvento"></span></label>
                 </div>
                 <div><input type="radio" id="fulltime" name="evento" value="Fulltime">
                     <label for="fulltime" class="fieldDescription">Long-term stay accommodations<span
@@ -90,8 +90,9 @@
 
             <input type="submit" value="Reserve">
         </form>
-        <p>When ever your visit a Temple, stay with us at Temple Inn & Suites</p>
-
+        <section id="banner" class="groupSection">
+            <h2>When ever you visit a Temple, stay with us at  Temple Inn & Suites</h2>  
+       </section>
     </main>
 
 

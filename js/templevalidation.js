@@ -269,8 +269,8 @@ function lastPageValuesValidation(){
             document.querySelector("#accomodation").checked = true;
         }
 
-        if  ((room === 'Suitte')&&(ThankYouLetter === null)){
-            document.querySelector("#suitte").checked = true;
+        if  ((room === 'Suite')&&(ThankYouLetter === null)){
+            document.querySelector("#suite").checked = true;
         } else if (ThankYouLetter === null) {
             document.querySelector("#singleroom").checked = true;
         }
