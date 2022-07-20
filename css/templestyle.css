@@ -225,16 +225,23 @@ input[type=submit] {
 
 .templeStyle {
     width: 100%;
-    max-width: 50em;
+    max-width: 32.4em;
     border: 2px solid #00A896;
     box-shadow: .1em .1em .8em .1em #15434a;
     text-align: center;
-
+}
+.templeStyleBig{
+    width: 100%;
+    max-width: 80em;
+}
+.templeStyleBig img{
+    width: 100%;
+    max-width: 80em;
 }
 
 .templeStyle img {
     width: 100%;
-    max-width: 50em;
+    max-width: 32.4em;
 }
 
 .likeNo {
@@ -251,20 +258,24 @@ input[type=submit] {
 
 
 #weather {
-    max-width: 50em;
-    background-color: #ffffff;
+    margin: 1em;
+    max-width: 30em;
+    background-color: #00A896;
     border: 2px solid #00A896;
     box-shadow: .1em .1em .8em .1em #15434a;
-
 }
 
+#ammenities{
+    display: flex;
+    flex-direction: column;
+}
 .capitalizeClass {
     text-transform: capitalize;
 }
 
 .weatherCard {
     width: 100%;
-    max-width: 30em;
+    max-width: 32.4em;
     color: #000000;
     display: flex;
     flex-direction: column;
@@ -319,10 +330,13 @@ input[type=submit] {
 }
 /*Other sizes*/
 @media (min-width: 32.5em) {
-
+    .templeStyle {
+        width: 50%;
+        max-width: 50.9em;
+    }
     .templeStyle img {
         width: 100%;
-        max-width: 25em;
+        max-width: 50.9em;
     }
 
     .cards {
@@ -330,25 +344,13 @@ input[type=submit] {
         flex-direction: row;
         flex-wrap: wrap;
     }
-
-    main #home{
-        display: grid;
-        grid-template-areas: 
-        "bookingForm bookingForm"
-        "locationOfMonth  weather" 
-        "locationOfMonth  wedding";
-    }
-    #bookingForm{
-        grid-area: bookingForm;
-    }
     #locationOfMonth{
-        grid-area: locationOfMonth;
-    }    
-    #weather{
-        grid-area: weather;
+        order:1;
     }
-    #wedding{
-        grid-area: wedding;
+    .ammenities{
+    } 
+    #weather{
+        flex-grow: 3;
     }
 }
 
@@ -379,12 +381,9 @@ input[type=submit] {
         display: none;
     }
 
-    .templeStyle img {
-        width: 250px;
-    }
 
     .templeStyle {
-        width: 100%;
+        width: 25%;
         max-width: 25em;
     }
 
@@ -399,8 +398,13 @@ input[type=submit] {
         flex-direction: row;
         flex-wrap: wrap;
     }
-
-
+    .ammenities{
+        display: flex;
+        flex-flow: row;
+    } 
+    #weather{
+        flex-grow: 3;
+    }
 }
 
 #atributions {

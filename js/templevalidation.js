@@ -87,13 +87,21 @@ function templesListreview(howManyTemples) {
         portrait.setAttribute('loading', 'eager');
         maplocationurl.setAttribute('src', temple.maplocationurl);
         likearea.setAttribute('id', temple.templeshortname);
+
+
         likearea.setAttribute('class', 'likeNo');
         likearea.setAttribute('onclick', `likesLocalStore(\"${temple.templeshortname}\")`);
 
         // Add/append the section(card) with the h2 element
 
         maplocationurl.setAttribute('style', 'display: none');
-        card.setAttribute('class', 'templeStyle');
+        if (howManyTemples > 1) {
+            card.setAttribute('class', 'templeStyle');
+        }else{
+            card.setAttribute('class', 'templeStyleBig');
+        }
+        
+       
 
         card.appendChild(portrait);
         card.appendChild(likearea);
@@ -106,16 +114,15 @@ function templesListreview(howManyTemples) {
             card.appendChild(parrafofourth);
             card.appendChild(email);
             card.appendChild(breakline);
-            //card.appendChild(maplocationurl);
             card.appendChild(phone);
         }
-
 
 
         // Add/append the existing HTML div with the cards class with the section(card)
         document.querySelector('section.cards').appendChild(card);
     }
 }
+
 
 function likesLocalStore(t) {
     console.log(t);
@@ -146,8 +153,7 @@ function closeForecast() {
 
 
 
-
-function weatherinformation(place) {
+function weatherinformation(lat, lon) {
     const currentTempTitle = document.querySelector('#tempTitle');
     const currentTemp = document.querySelector('#tempVar');
     const currentHumidity = document.querySelector('#humidityVar');
@@ -158,7 +164,7 @@ function weatherinformation(place) {
 
     //exclude=hourly,minutely&
     const weatherurl =
-        `https://api.openweathermap.org/data/2.5/onecall?lat=19.386808&lon=-99.1938216&units=metric&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=b0f8553cf7734d56c5b1f0112382bbb7`;
 
     async function apiFetch() {
         try {
@@ -239,6 +245,7 @@ function weatherinformation(place) {
         document.querySelector('#weatherDesc1').innerHTML = `${weatherData.daily[1].weather[0].description}`;
         document.querySelector('#weatherDesc2').innerHTML = `${weatherData.daily[2].weather[0].description}`;
         document.querySelector('#weatherDesc3').innerHTML = `${weatherData.daily[3].weather[0].description}`;
+
     }
 }
 
@@ -298,7 +305,7 @@ function lastPageValuesValidation() {
 
 function indexJobs() {
     datesPageUpdate();
-    weatherinformation('mexico');
+    weatherinformation("19.386808","-99.1938216");
     templesListreview(1);
 }
 

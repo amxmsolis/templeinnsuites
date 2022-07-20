@@ -15,7 +15,9 @@
         "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
         "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=mexico,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
         "imageurl": "images/t-mexico_city_temple_lds.jpg",
-        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Aragon-Zoo", "Bosque de Aragon"]
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Aragon-Zoo", "Bosque de Aragon"],
+        "lat":"19.386808",
+        "lon":"-99.1938216"
       },
       {
         "idComp": "2",
@@ -30,7 +32,9 @@
         "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
         "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=veracruz,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
         "imageurl": "images/t-veracruz_mexico_temple_lds.jpeg",
-        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Veracruz Aquarium"]
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Veracruz Aquarium"],
+        "lat":"19.386808",
+        "lon":"-99.1938216"
       },
       {
         "idComp": "3",
@@ -45,7 +49,9 @@
         "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
         "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=oaxaca,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
         "imageurl": "images/t-oaxaca_mexico_temple.jpeg",
-        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Oaxaca Downtown"]
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital", "Oaxaca Downtown"],
+        "lat":"19.386808",
+        "lon":"-99.1938216"
       },
       {
         "idComp": "4",
@@ -60,7 +66,9 @@
         "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
         "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=tijuana,mx&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
         "imageurl": "images/tijuana_mexico_temple_exterior.png",
-        "nearservices":["Temple Inn & Suites Hotel", "Hospital"]
+        "nearservices":["Temple Inn & Suites Hotel", "Hospital"],
+        "lat":"19.386808",
+        "lon":"-99.1938216"
       },
       {
         "idComp": "5",
@@ -75,7 +83,9 @@
         "maplocationurl":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.405019701324!2d-77.097720483963!3d38.98325177955752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b8f21f1%3A0x9a0b3cde14da0a60!2s4800%20Montgomery%20Ln%20%23300%2C%20Bethesda%2C%20MD%2020814%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1657819720025!5m2!1ses-419!2smx",
         "cityweather":"https://api.openweathermap.org/data/2.5/weather?q=meriland,us&units=imperial&appid=b0f8553cf7734d56c5b1f0112382bbb7",
         "imageurl": "images/t-washington_dc_mormon_temple.jpeg",
-        "nearservices":["Temple Inn & Suites Hotel"]
+        "nearservices":["Temple Inn & Suites Hotel"],
+        "lat":"19.386808",
+        "lon":"-99.1938216"
       }
 
     ],
