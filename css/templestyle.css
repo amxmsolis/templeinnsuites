@@ -246,6 +246,7 @@ input[type=submit] {
     display: flex;
     flex-direction: column;
     -ms-flex-align: center;
+    margin: 1em;
 }
 
 

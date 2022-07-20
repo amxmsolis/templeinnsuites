@@ -36,9 +36,9 @@ function templesListreview(howManyTemples) {
         .then(function (jsonObject) {
             const temples = jsonObject['temples'];
             // temples.forEach(displaytemples);
-            let length =  temples.length;
-            if (length <= howManyTemples ){
-                howManyTemples=length;
+            let length = temples.length;
+            if (length <= howManyTemples) {
+                howManyTemples = length;
             }
 
             for (let i = 0; i < howManyTemples; i++) {
@@ -77,7 +77,7 @@ function templesListreview(howManyTemples) {
         parrafofourth.textContent = `Near services: ${temple.nearservices}`;
         phone.setAttribute('href', `tel: ${temple.phone}`);
         phone.textContent = `${temple.phone}`;
-        
+
         email.setAttribute('href', `mailto:${temple.email}`);
         email.textContent = `${temple.email}`;
 
@@ -98,15 +98,19 @@ function templesListreview(howManyTemples) {
         card.appendChild(portrait);
         card.appendChild(likearea);
         card.appendChild(h2);
-        card.appendChild(h3);
-        card.appendChild(parrafofirst);
-        card.appendChild(parrafosecond);
-        card.appendChild(parrafothird);
-        card.appendChild(parrafofourth);
-        card.appendChild(email);
-        card.appendChild(breakline);
-        card.appendChild(phone);
-        //card.appendChild(maplocationurl);
+        if (howManyTemples > 1) {
+            card.appendChild(h3);
+            card.appendChild(parrafofirst);
+            card.appendChild(parrafosecond);
+            card.appendChild(parrafothird);
+            card.appendChild(parrafofourth);
+            card.appendChild(email);
+            card.appendChild(breakline);
+            //card.appendChild(maplocationurl);
+            card.appendChild(phone);
+        }
+
+
 
         // Add/append the existing HTML div with the cards class with the section(card)
         document.querySelector('section.cards').appendChild(card);
@@ -127,14 +131,14 @@ function likesLocalStore(t) {
     localStorage.setItem(`${t}`, likes);
 }
 
-function closeForecast(){
-    let closeyn=document.querySelector('#closeForecast').textContent;
+function closeForecast() {
+    let closeyn = document.querySelector('#closeForecast').textContent;
 
-    if (closeyn === '🔼'){
+    if (closeyn === '🔼') {
         document.querySelector('#forecastWeater').style.display = "none";
         document.querySelector('#closeForecast').textContent = "🔽";
-    }else{
-        
+    } else {
+
         document.querySelector('#forecastWeater').style.display = "block";
         document.querySelector('#closeForecast').textContent = "🔼";
     }
@@ -238,67 +242,67 @@ function weatherinformation(place) {
     }
 }
 
-function lastPageValuesValidation(){
-        const params = new URL(document.location).searchParams;
-        const destination = params.get("destination");
-        const fromdate = params.get("fromdate");
-        const todate = params.get("todate");
-        const email = params.get("email");
-        const name = params.get("name");
-        const phone = params.get("phone");
-        const personas = params.get("personas");
-        const kids = params.get("kids");
-        const room = params.get("room");
-        const evento = params.get("evento");
-        const ThankYouLetter = document.querySelector("#ThankYouLetter");
+function lastPageValuesValidation() {
+    const params = new URL(document.location).searchParams;
+    const destination = params.get("destination");
+    const fromdate = params.get("fromdate");
+    const todate = params.get("todate");
+    const email = params.get("email");
+    const name = params.get("name");
+    const phone = params.get("phone");
+    const personas = params.get("personas");
+    const kids = params.get("kids");
+    const room = params.get("room");
+    const evento = params.get("evento");
+    const ThankYouLetter = document.querySelector("#ThankYouLetter");
 
 
-        document.querySelector("#destination").value = destination;
-        document.querySelector("#fromdate").value = fromdate;
-        document.querySelector("#todate").value = todate;
-        document.querySelector("#email").value = email;
-        document.querySelector("#name").value = name;
-        document.querySelector("#personas").value = personas;
-        document.querySelector("#kids").value = kids;
+    document.querySelector("#destination").value = destination;
+    document.querySelector("#fromdate").value = fromdate;
+    document.querySelector("#todate").value = todate;
+    document.querySelector("#email").value = email;
+    document.querySelector("#name").value = name;
+    document.querySelector("#personas").value = personas;
+    document.querySelector("#kids").value = kids;
 
-        if ((evento === 'Wedding')&&(ThankYouLetter === null)){
-            document.querySelector("#wedding").checked = true;
-        } else if ((evento === 'Fulltime')&&(ThankYouLetter === null)){
-            document.querySelector("#fulltime").checked = true;
-        } else if (ThankYouLetter === null) {
-            document.querySelector("#accomodation").checked = true;
-        }
+    if ((evento === 'Wedding') && (ThankYouLetter === null)) {
+        document.querySelector("#wedding").checked = true;
+    } else if ((evento === 'Fulltime') && (ThankYouLetter === null)) {
+        document.querySelector("#fulltime").checked = true;
+    } else if (ThankYouLetter === null) {
+        document.querySelector("#accomodation").checked = true;
+    }
 
-        if  ((room === 'Suite')&&(ThankYouLetter === null)){
-            document.querySelector("#suite").checked = true;
-        } else if (ThankYouLetter === null) {
-            document.querySelector("#singleroom").checked = true;
-        }
+    if ((room === 'Suite') && (ThankYouLetter === null)) {
+        document.querySelector("#suite").checked = true;
+    } else if (ThankYouLetter === null) {
+        document.querySelector("#singleroom").checked = true;
+    }
 
-        
-        document.querySelector("#destination").innerHTML = destination;
-        document.querySelector("#fromdate").innerHTML = fromdate;
-        document.querySelector("#todate").innerHTML = todate;
-        document.querySelector("#email").innerHTML = email;
-        document.querySelector("#name").innerHTML = name;
-        document.querySelector("#phone").innerHTML = phone;
-        document.querySelector("#personas").innerHTML = personas;
-        document.querySelector("#kids").innerHTML = kids;
-        if (ThankYouLetter !== null){
-            document.querySelector("#room").innerHTML = room;
-            document.querySelector("#evento").innerHTML = evento;
-        }
+
+    document.querySelector("#destination").innerHTML = destination;
+    document.querySelector("#fromdate").innerHTML = fromdate;
+    document.querySelector("#todate").innerHTML = todate;
+    document.querySelector("#email").innerHTML = email;
+    document.querySelector("#name").innerHTML = name;
+    document.querySelector("#phone").innerHTML = phone;
+    document.querySelector("#personas").innerHTML = personas;
+    document.querySelector("#kids").innerHTML = kids;
+    if (ThankYouLetter !== null) {
+        document.querySelector("#room").innerHTML = room;
+        document.querySelector("#evento").innerHTML = evento;
+    }
 
 }
 
 
-function indexJobs(){
+function indexJobs() {
     datesPageUpdate();
     weatherinformation('mexico');
     templesListreview(1);
 }
 
-function reservationsJobs(){
+function reservationsJobs() {
     datesPageUpdate();
     lastPageValuesValidation();
 }
