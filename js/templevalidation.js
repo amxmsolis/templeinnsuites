@@ -127,7 +127,18 @@ function likesLocalStore(t) {
     localStorage.setItem(`${t}`, likes);
 }
 
+function closeForecast(){
+    let closeyn=document.querySelector('#closeForecast').textContent;
 
+    if (closeyn === '🔼'){
+        document.querySelector('#forecastWeater').style.display = "none";
+        document.querySelector('#closeForecast').textContent = "🔽";
+    }else{
+        
+        document.querySelector('#forecastWeater').style.display = "block";
+        document.querySelector('#closeForecast').textContent = "🔼";
+    }
+}
 
 
 
@@ -190,18 +201,18 @@ function weatherinformation(place) {
         currentWind.innerHTML = `Wind Chill: <strong>${windVar}</strong> `;
 
         document.querySelector('#weatherTemp0').innerHTML =
-            `${weatherData.daily[0].temp.min}-${weatherData.daily[0].temp.max}°C `;
+            ` ${weatherData.daily[0].temp.min}-${weatherData.daily[0].temp.max}°C `;
         document.querySelector('#weatherTemp1').innerHTML =
-            `${weatherData.daily[1].temp.min}-${weatherData.daily[1].temp.max}°C `;
+            ` ${weatherData.daily[1].temp.min}-${weatherData.daily[1].temp.max}°C `;
         document.querySelector('#weatherTemp2').innerHTML =
-            `${weatherData.daily[2].temp.min}-${weatherData.daily[2].temp.max}°C `;
+            ` ${weatherData.daily[2].temp.min}-${weatherData.daily[2].temp.max}°C `;
         document.querySelector('#weatherTemp3').innerHTML =
-            `${weatherData.daily[3].temp.min}-${weatherData.daily[3].temp.max}°C `;
+            ` ${weatherData.daily[3].temp.min}-${weatherData.daily[3].temp.max}°C `;
 
-        document.querySelector('#weatherHumi0').innerHTML = `Humidity ${weatherData.daily[0].temp.day}% `;
-        document.querySelector('#weatherHumi1').innerHTML = `Humidity ${weatherData.daily[1].temp.day}% `;
-        document.querySelector('#weatherHumi2').innerHTML = `Humidity ${weatherData.daily[2].temp.day}% `;
-        document.querySelector('#weatherHumi3').innerHTML = `Humidity ${weatherData.daily[3].temp.day}% `;
+        document.querySelector('#weatherHumi0').innerHTML = ` Humidity ${weatherData.daily[0].temp.day}% `;
+        document.querySelector('#weatherHumi1').innerHTML = ` Humidity ${weatherData.daily[1].temp.day}% `;
+        document.querySelector('#weatherHumi2').innerHTML = ` Humidity ${weatherData.daily[2].temp.day}% `;
+        document.querySelector('#weatherHumi3').innerHTML = ` Humidity ${weatherData.daily[3].temp.day}% `;
 
         document.querySelector('#weatherImg0').setAttribute('src',
             `https://openweathermap.org/img/w/${weatherData.daily[0].weather[0].icon}.png`);
@@ -227,3 +238,67 @@ function weatherinformation(place) {
     }
 }
 
+function lastPageValuesValidation(){
+        const params = new URL(document.location).searchParams;
+        const destination = params.get("destination");
+        const fromdate = params.get("fromdate");
+        const todate = params.get("todate");
+        const email = params.get("email");
+        const name = params.get("name");
+        const phone = params.get("phone");
+        const personas = params.get("personas");
+        const kids = params.get("kids");
+        const room = params.get("room");
+        const evento = params.get("evento");
+        const ThankYouLetter = document.querySelector("#ThankYouLetter");
+
+
+        document.querySelector("#destination").value = destination;
+        document.querySelector("#fromdate").value = fromdate;
+        document.querySelector("#todate").value = todate;
+        document.querySelector("#email").value = email;
+        document.querySelector("#name").value = name;
+        document.querySelector("#personas").value = personas;
+        document.querySelector("#kids").value = kids;
+
+        if ((evento === 'Wedding')&&(ThankYouLetter === null)){
+            document.querySelector("#wedding").checked = true;
+        } else if ((evento === 'Fulltime')&&(ThankYouLetter === null)){
+            document.querySelector("#fulltime").checked = true;
+        } else if (ThankYouLetter === null) {
+            document.querySelector("#accomodation").checked = true;
+        }
+
+        if  ((room === 'Suitte')&&(ThankYouLetter === null)){
+            document.querySelector("#suitte").checked = true;
+        } else if (ThankYouLetter === null) {
+            document.querySelector("#singleroom").checked = true;
+        }
+
+        
+        document.querySelector("#destination").innerHTML = destination;
+        document.querySelector("#fromdate").innerHTML = fromdate;
+        document.querySelector("#todate").innerHTML = todate;
+        document.querySelector("#email").innerHTML = email;
+        document.querySelector("#name").innerHTML = name;
+        document.querySelector("#phone").innerHTML = phone;
+        document.querySelector("#personas").innerHTML = personas;
+        document.querySelector("#kids").innerHTML = kids;
+        if (ThankYouLetter !== null){
+            document.querySelector("#room").innerHTML = room;
+            document.querySelector("#evento").innerHTML = evento;
+        }
+
+}
+
+
+function indexJobs(){
+    datesPageUpdate();
+    weatherinformation('mexico');
+    templesListreview(1);
+}
+
+function reservationsJobs(){
+    datesPageUpdate();
+    lastPageValuesValidation();
+}

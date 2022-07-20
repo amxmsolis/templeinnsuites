@@ -12,7 +12,7 @@
     <meta name="description" content="Welcome to Temple Inn and Suites Mexico">
 </head>
 
-<body onload="datesPageUpdate();weatherinformation('mexico');templesListreview(1)">
+<body onload="indexJobs();">
     <header>
         <nav class="upperMenu" id="myupperMenu">
             <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
@@ -26,58 +26,57 @@
                 <img src="images/logo-menu.webp" alt="">
             </a>
         </nav>
-        <div id="upperDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
-            class="describeSocial">+52 55 5999 9999</span></a></div>
+        <div id="upperDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon"
+                    alt="Call us"><span class="describeSocial">+52 55 5999 9999</span></a></div>
 
-        
+
     </header>
 
 
-    <main>
+    <main id="home">
 
-        <section id="bookingForm" >
+        <section id="bookingForm">
             <div class="sectionInfo">
-                <section id="bannerInfo"><p>When ever you visit a Temple, stay with us at <strong>Temple Inn & Suites</strong>. 
-                </p></section>
-                <form class="homeReserve"> 
+                <section id="bannerInfo">
+                    <p>When ever you visit a Temple, stay with us at <strong>Temple Inn & Suites</strong>.
+                    </p>
+                </section>
+                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="reservations.html">
                     <label for="destination" class="fieldDescription">Destination</label>
-                    <input type="text" id="destination" name="destination" value="" placeholder="City name">
+                    <input type="text" id="destination" name="destination" value="" placeholder="City name" required>
                     <label for="fromdate" class="fieldDescription">From</label>
-                    <input type="date" id="fromdate" name="fromdate" value="" placeholder=""> 
+                    <input type="date" id="fromdate" name="fromdate" value="" placeholder="" required>
                     <label for="todate" class="fieldDescription">To</label>
-                    <input type="date" id="todate" name="todate" value="" placeholder=""> 
+                    <input type="date" id="todate" name="todate" value="" placeholder="" required>
                     <input type="submit" value="Reserve">
                 </form>
             </div>
             <div class="sectionImage">
-                <picture id="welcomeimage" lass="homeImageStock" >
+                <picture id="welcomeimage" lass="homeImageStock">
                     <source media="(min-width: 51em)" srcset="images/s-templetop-large.webp">
                     <source media="(min-width: 32.5em)" srcset="images/s-templetop-medium.webp">
                     <img src="images/s-templetop-small.webp" class="homeImageStock" alt="Temple top">
                 </picture>
-
             </div>
         </section>
-        <section id="templos" class="cards">
 
-        </section>
         <section id="locationOfMonth" class="cards">
         </section>
-        <section id="cpontactus">
-            <h2>Contact us</h2>
-        </section>
-        <section id="weather">
+
+        <section id="weather" class="cards">
             <h1>Weather</h1>
             <h2 id="tempTitle">Mexico City</h2>
             <div id="currentWeather" class="weatherCard">
                 <p id="currentDate"></p>
                 <p id="tempVar" class="tempVar"></p>
                 <img id="weatherIcon" class="weatherimage" src="../images/placeholder.png" alt="">
-                <figcaption><span id="currentWeatherImage"></span> <span id="speedVar"></span> <span id="windVar"></span>
+                <figcaption><span id="currentWeatherImage"></span> <span id="speedVar"></span> <span
+                        id="windVar"></span>
                     <span id="humidityVar"></span></figcaption>
             </div>
-    
-            <h3>Forecast</h3>
+
+            <h3>Forecast <a id="closeForecast" href="javascript:void(0);" class="menuIconForecast"
+                    onclick="closeForecast()">🔽</a></h3>
             <div id="forecastWeater">
                 <div class="weatherCardForecast">
                     <span id="weatherTemp0"></span>
@@ -105,10 +104,50 @@
                 </div>
             </div>
         </section>
-    
- 
 
-            
+
+        <section id="wedding" class="groupSection">
+            <div class="sectionImage">
+                <picture id="welcomeimage" lass="homeImageStock">
+                    <img src="images/g-marriage.jpg" class="homeImageStock" alt="">
+                </picture>
+            </div>
+            <div class="groupInfo">
+                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="groups.html#wedding">
+                    <input type="hidden" id="evento" name="evento" value="Wedding">
+                    <input type="submit" value="Wedding plans?">
+                </form>
+            </div>
+        </section>
+        
+        <section id="youth" class="groupSection">
+            <div class="sectionImage">
+                <picture id="welcomeimage" lass="homeImageStock">
+                    <img src="images/g-youth_attending_temple.png" class="homeImageStock" alt="">
+                </picture>
+            </div>
+            <div class="groupInfo">
+                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="groups.html#leaders">
+                    <input type="hidden" id="evento" name="evento" value="Leaders">
+                    <input type="submit" value="Youth excursion to Temple?">
+                </form>
+            </div>
+        </section>
+
+        <section id="mission" class="groupSection">
+            <div class="sectionImage">
+                <picture id="welcomeimage" lass="homeImageStock">
+                    <img src="images/g-seniormission2.jpg" class="homeImageStock" alt="">
+                </picture>
+            </div>
+            <div class="groupInfo">
+                <form id="homeReserve" class="homeReserve" method="get" target="_self" action="groups.html#mission">
+                    <input type="submit" value="Senior mission plans?">
+                </form>
+            </div>
+        </section>
+
+
     </main>
 
 
@@ -129,8 +168,8 @@
                 <li>Bethesda, MD, US 20814</li>
                 <li><a href="mapas.html#hedquarters"><img src="images/logo-map.webp" class="socialIcon"
                             alt="Find us in the map"><span class="describeSocial">Location map</span></a></li>
-                <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
-                            class="describeSocial">+52 55 5999 9999</span></a>
+                <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon"
+                            alt="Call us"><span class="describeSocial">+52 55 5999 9999</span></a>
                 </li>
             </ul>
             <ul class="addressAndMail" id="lowerSocial">
@@ -152,5 +191,6 @@
 
     </footer>
     <script src="js/templevalidation.js">
-</script>
+    </script>
+
 </html>

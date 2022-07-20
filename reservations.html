@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/templestyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
     <title>Temple Inn & Suites - Discover</title>
-    <meta name="description" content="The Discover page provides a list with information of the amenities and special services offered at the hotel">
+    <meta name="description"
+        content="The Discover page provides a list with information of the amenities and special services offered at the hotel">
 </head>
 
-<body onload="datesPageUpdate();">
+<body onload="reservationsJobs();">
     <header>
         <nav class="upperMenu" id="myupperMenu">
             <a href="index.html" class="activeOption"><img src="images/templeinn-logo.png" class="upperLogo"
@@ -26,64 +27,71 @@
                 <img src="images/logo-menu.webp" alt="">
             </a>
         </nav>
-        <div id="upperDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
-            class="describeSocial">+52 55 5999 9999</span></a></div>
+        <div id="upperDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon"
+                    alt="Call us"><span class="describeSocial">+52 55 5999 9999</span></a></div>
 
-        
+
     </header>
 
 
     <main>
+
         <h1>Reservations</h1>
-        <form id="registrationForm" method="get" target="_self" action="thankyou.html">
+        <form id="registrationFormFull" method="get" target="_self" action="thankyou.html">
             <label for="destination">Destination</label>
             <input type="text" id="destination" name="destination" value="" placeholder="City name">
             <label for="fromdate">From</label>
-            <input type="date" id="fromdate" name="fromdate" value="" placeholder=""> 
+            <input type="date" id="fromdate" name="fromdate" value="" placeholder="">
             <label for="todate">To</label>
-            <input type="date" id="todate" name="todate" value="" placeholder=""> 
-            <input type="submit" value="Reserve">
+            <input type="date" id="todate" name="todate" value="" placeholder="">
 
-            
-            <label for="fullName" class="fieldDescription">Full name *<span class="alertfullName"></span></label>
-            <input type="text" name="fullName" id="fullName" value="" placeholder="Full name" required>
+            <fieldset>
+                <legend>Room </legend>
+            <div><input type="radio" id="singleroom" name="room" value="Room">
+                <label for="normalroom" class="fieldDescription">Single room <span class="alertEvento"></span></label>
+            </div>
+            <div><input type="radio" id="suitte" name="room" value="Suitte">
+                <label for="suitte" class="fieldDescription">Suitte (accommodations in kitchenette suites)<span class="alertEvento"></span></label></div>
+</fieldset>
 
-            <label for="lastName" class="fieldDescription">Last name *<span class="alertLastName"></span></label>
-            <input type="text" name="lastName" id="lastName" value="" placeholder="Last name" required>
+            <fieldset>
+                <legend>Event</legend>
+                <div><input type="radio" id="accomodation" name="evento" value="Acommodation">
+                    <label for="accomodation" class="fieldDescription">Just accomodation<span
+                            class="alertEvento"></span></label></div>
+                <div><input type="radio" id="wedding" name="evento" value="Wedding">
+                    <label for="weding" class="fieldDescription">Wedding Event<span class="alertEvento"></span></label>
+                </div>
+                <div><input type="radio" id="fulltime" name="evento" value="Fulltime">
+                    <label for="fulltime" class="fieldDescription">Long-term stay accommodations<span
+                            class="alertEvento"></span></label></div>
+            </fieldset>
 
-            <label for="title" class="fieldDescription">Title <span class="alertTitle"></span></label>
-            <input type="text" name="title" id="title" value="" placeholder="Title or schoolarship"  pattern="[A-Za-z\s-]{7,}">
+            <label for="name" class="fieldDescription">Full name *<span class="alertfullName"></span></label>
+            <input type="text" name="name" id="name" value="" placeholder="Fill your name" required>
 
             <label for="email" class="fieldDescription">eMail * <span class="alertEmail"></span></label>
-            <input type="email" name="email" id="email" value=""  placeholder="email" required>
+            <input type="email" name="email" id="email" value="" placeholder="email" required>
 
-            <label for="mobile" class="fieldDescription">Cell phone number *<span class="alertMobile"></span></label>
-            <input type="tel" name="mobile" id="mobile" value=""  placeholder="Phone number only numbers required" required>
+            <label for="phone" class="fieldDescription">phone * <span class="alertPhone"></span></label>
+            <input type="text" name="phone" id="phone" value="" placeholder="phone number only numbers" pattern='[0-9]{10,12}' required>
 
-            <label for="jobPosition" class="fieldDescription">Job position *<span
-                    class="alertJobPosition"></span></label>
-            <input type="text" name="jobPosition" id="jobPosition" value=""  placeholder="Job position" required>
+            <label for="personas" class="fieldDescription">Adults <span class="alertEmail"></span></label>
+            <input type="text" name="personas" id="personas" value="2" placeholder="0-99 only numvers allow" pattern='[1-9]{1,3}' required>
 
-            <p class="fieldDescription">Membership level:</p>
-            <div><input type="radio" id="NonProfit" name="memberShipLevel" value="Non Profit">
-                  <label for="NonProfit">Non Profit - no cost for non-profit organizations. </label> </div>
-            <div><input type="radio" id="Bronze" name="memberShipLevel" value="Bronze">
-                  <label for="Bronze">Bronze - $100usd/year includes access to all virtual events.</label> </div>
-            <div><input type="radio" id="Silver" name="memberShipLevel" value="Silver">
-                  <label for="Silver">Silver - $500usd/year includes 50% off for face-to-face courses + Bronze benefits</label> </div>
-            <div><input type="radio" id="Gold" name="memberShipLevel" value="Gold">
-                  <label for="Gold">Gold - $1000usd/year includes 1 free access to our Industrial Congress + Silver benefits </label> </div>
+            <label for="kids" class="fieldDescription">Kids <span class="alertEmail"></span></label>
+            <input type="text" name="kids" id="kids" value="0" placeholder="0-99 only numvers allow" pattern='[0-9]{1,3}'  required>
 
 
-            <label for="businessDescription" class="fieldDescription">Business description <span
-                    class="alertJobPosition"></span></label>
-            <textarea name="businessDescription" id="businessDescription"  placeholder="Please describe your business"></textarea>
 
-            <input type="hidden" id="dateTime" name="dateTime" value="">
 
-            <input type="submit" value="Join">
 
+            <input type="hidden" id="currentDate" name="dateTime" value="">
+
+            <input type="submit" value="Reserve">
         </form>
+        <p>When ever your visit a Temple, stay with us at Temple Inn & Suites</p>
+
     </main>
 
 
@@ -104,8 +112,8 @@
                 <li>Bethesda, MD, US 2081</li>
                 <li><a href="mapas.html#hedquarters"><img src="images/logo-map.webp" class="socialIcon"
                             alt="Find us in the map"><span class="describeSocial">Location map</span></a></li>
-                <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon" alt="Call us"><span
-                            class="describeSocial">+52 55 5999 9999</span></a>
+                <li id="lowerDial"><a href="tel:+525559999999"><img src="images/logo-phone.webp" class="socialIcon"
+                            alt="Call us"><span class="describeSocial">+52 55 5999 9999</span></a>
                 </li>
             </ul>
             <ul class="addressAndMail" id="lowerSocial">
