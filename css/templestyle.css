@@ -118,6 +118,7 @@ footer {
 #lowerUpdatedate {
     grid-area: 4 / 1 / 5 / 5;
     background-color: #00A896;
+    color:#000000;
 }
 
 img.lowerLogo {
