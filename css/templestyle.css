@@ -286,11 +286,12 @@ input[type=submit] {
     width: 100%;
     max-width: 10em;
 }
-
+ 
 .weatherCardForecast {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    border-top: .1em solid #000000;
 }
 
 .weatherCardForecast img {
