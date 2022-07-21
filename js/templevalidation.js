@@ -62,7 +62,7 @@ function templesListreview(howManyTemples) {
         let email = document.createElement('a');
         let likearea = document.createElement('button');
         let like = Number(window.localStorage.getItem(temple.templeshortname));
-        console.log(like);
+        //console.log(like);
         if (like == 1) {
             likearea.textContent = "💗";
         } else {
@@ -125,9 +125,9 @@ function templesListreview(howManyTemples) {
 
 
 function likesLocalStore(t) {
-    console.log(t);
+    //console.log(t);
     let likes = Number(window.localStorage.getItem(t));
-    console.log(likes);
+    //console.log(likes);
     if (likes !== 0) {
         likes = 0;
         document.getElementById(t).textContent = "🤍";
@@ -183,7 +183,7 @@ function weatherinformation(lat, lon) {
     apiFetch();
 
     function displayResults(weatherData) {
-        console.log(weatherData);
+        //console.log(weatherData);
         const imageSrc = `https://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`;
         const imageDescription = weatherData.current.weather[0].description;
         const speedVar = weatherData.current.wind_speed;
