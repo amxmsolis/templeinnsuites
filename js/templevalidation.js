@@ -21,7 +21,7 @@ function datesPageUpdate() {
 
     const d = new Date();
     if ((d.getDay() == 1) || (d.getDay() == 2)) {
-        document.querySelector('#bannerInfo').style.display = "block";
+        //document.querySelector('#bannerInfo').style.display = "block";
     };
 }
 
